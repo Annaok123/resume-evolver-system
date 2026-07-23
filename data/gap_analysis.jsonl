@@ -1,0 +1,5 @@
+{"timestamp": "2026-07-23T05:43:04.566328+00:00", "match_rate": 47.1, "resume_skills_count": 11, "market_kw_count": 17, "high_priority_gaps": ["django", "gcp", "data pipeline", "kafka", "ai", "mysql", "redis", "grpc", "java"]}
+{"timestamp": "2026-07-23T05:44:47.571910+00:00", "match_rate": 47.1, "resume_skills_count": 11, "market_kw_count": 17, "high_priority_gaps": ["kafka", "grpc", "ai", "java", "redis", "data pipeline", "gcp", "django", "mysql"]}
+{"timestamp": "2026-07-23T06:25:45.352999+00:00", "match_rate": 0.0, "resume_skills_count": 2, "market_kw_count": 16, "high_priority_gaps": ["redis", "ai", "mysql", "django", "kubernetes", "ci/cd", "aws", "go", "kafka", "java"]}
+{"timestamp": "2026-07-23T06:25:45.472211+00:00", "match_rate": 0.0, "resume_skills_count": 2, "market_kw_count": 16, "high_priority_gaps": ["postgresql", "go", "redis", "grpc", "ai", "ci/cd", "docker", "kubernetes", "python", "aws"]}
+{"ts": "2026-07-23T19:21:38.824287+08:00", "overall_score": 44.4, "scores": {"pm": 61.1, "product": 46.0, "ba": 24.9, "strategy": 45.6}, "action_items_count": 3}

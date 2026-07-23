@@ -1,0 +1,33 @@
+{
+  "agentId": "agent-resume-evolver",
+  "name": "简历进化者",
+  "emoji": "🎯",
+  "description": "多 Agent 团队，自动跟踪市场招聘需求并持续优化个人简历与个人网站。",
+  "highlights": [
+    "👁️ 自动抓取 LinkedIn/Indeed/Boss直聘 等平台招聘数据（HC）",
+    "🔍 对比简历与市场需求，量化匹配率，输出 Gap Analysis 报告",
+    "✍️ 基于市场趋势生成简历进化建议，智能强化关键词",
+    "🌐 将简历渲染为精美的静态个人网站",
+    "⚙️ 支持定时任务自动化，无需手动触发"
+  ],
+  "skills": [],
+  "prompts": [
+    "运行一次完整的简历进化流程，帮我分析当前简历与市场需求的差距",
+    "查看我的简历匹配率报告，并给出具体优化建议"
+  ],
+  "workflow": [
+    "Headhunter Agent：定时/手动抓取招聘平台数据，保存到 market_hc.json",
+    "Analyst Agent：解析市场数据，提取关键词，与简历技能对比，输出 gap_analysis.md",
+    "Optimizer Agent：生成进化建议，预览 diff，用户批准后更新 resume.md",
+    "Publisher Agent：将最新简历数据渲染为 public/index.html"
+  ],
+  "useCases": [
+    "正在找工作，希望简历紧贴市场需求，提高面试邀约率",
+    "想拥有一个自动更新的个人简历展示网站",
+    "想量化了解自己技能的市场竞争力和提升方向",
+    "希望定期收到简历优化建议，无需手动追踪市场变化"
+  ],
+  "platforms": ["LinkedIn", "Indeed", "Boss直聘", "静态网站"],
+  "createdAt": "2026-07-23T00:00:00.000Z",
+  "version": "1.0.0"
+}

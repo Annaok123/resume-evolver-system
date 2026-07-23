@@ -1,12 +1,12 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0",
   "owner": {
     "name": "周娜娜",
     "target_roles": {
-      "pm": "高级项目经理 / AI项目经理",
-      "product": "产品经理 / AI产品经理",
-      "ba": "商业分析师 / 研发效能",
-      "strategy": "战略规划 / 项目总监"
+      "pm": "高级项目经理 / AI项目经理 / PMO",
+      "product": "产品经理 / AI产品经理 / 数字化产品经理",
+      "ba": "商业分析师 / 研发效能分析师",
+      "strategy": "战略规划 / 项目总监 / OKR运营"
     },
     "target_city": "深圳",
     "email": "zhounanaok@163.com",
@@ -15,47 +15,77 @@
   "monitoring": {
     "enabled": true,
     "keywords_by_track": {
-      "pm": ["高级项目经理", "AI项目经理", "研发项目经理", "PMO项目管理", "项目集经理"],
-      "product": ["产品经理", "AI产品经理", "数字化产品经理", "C端产品经理"],
-      "ba": ["商业分析", "研发效能", "数据分析", "BA", "商业数据分析师"],
-      "strategy": ["战略规划", "OKR运营", "项目总监", "经营分析", "策略经理"]
+      "pm": [
+        "高级项目经理", "AI项目经理", "研发项目经理", "PMO项目管理",
+        "项目集经理", "Scrum Master", "敏捷项目经理", "DevOps项目经理"
+      ],
+      "product": [
+        "产品经理", "AI产品经理", "数字化产品经理",
+        "C端产品经理", "B端产品经理", "数据产品经理"
+      ],
+      "ba": [
+        "商业分析", "研发效能", "数据分析", "BA",
+        "商业数据分析师", "效能分析师", "HR分析师"
+      ],
+      "strategy": [
+        "战略规划", "OKR运营", "项目总监", "经营分析",
+        "策略经理", "战略BP", "OKR教练"
+      ]
     },
     "locations": ["深圳", "广州", "上海"],
     "sources": ["linkedin", "zhipin", "liepin", "lagou"],
     "interval_hours": 168,
-    "max_listings_per_run": 30
+    "max_listings_per_track": 15
   },
   "resume_tracks": {
     "tracks": ["pm", "product", "ba", "strategy"],
     "track_labels": {
-      "pm": "项目经理",
-      "product": "产品经理",
-      "ba": "商业分析",
-      "strategy": "战略规划"
+      "pm": "🎯 项目经理",
+      "product": "📱 产品经理",
+      "ba": "📊 商业分析",
+      "strategy": "🏛️ 战略规划"
+    },
+    "track_colors": {
+      "pm": "#818cf8",
+      "product": "#a78bfa",
+      "ba": "#22d3ee",
+      "strategy": "#fbbf24"
     },
     "data_dir": "data/resumes",
     "active_track": "pm"
   },
   "evolution": {
-    "auto_approve_minor": false,
+    "auto_approve_minor": true,
     "require_approval_threshold": "major",
-    "max_skills_added_per_run": 3,
     "min_relevance_score": 0.6,
     "evolve_on_schedule": true,
     "evolution_interval_hours": 168,
-    "evolve_all_tracks": true
+    "evolve_all_tracks": true,
+    "minor_changes": [
+      "措辞调整",
+      "量化指标重述",
+      "关键词重新排列",
+      "格式美化"
+    ],
+    "major_changes": [
+      "新增技能章节",
+      "删除工作经历",
+      "修改职衔定位",
+      "新增工作经历"
+    ]
   },
   "website": {
     "output_path": "public/index.html",
-    "template": "portfolio",
-    "theme": "professional",
-    "show_all_tracks": true,
-    "base_url": "",
-    "auto_deploy": false
+    "github_repo": "Annaok123/resume-evolver-system",
+    "github_pages_branch": "main",
+    "github_pages_path": "/docs",
+    "base_url": "https://annaok123.github.io/resume-evolver-system/",
+    "auto_deploy": false,
+    "blog_url": "https://annaok123.github.io/Anna-blog/"
   },
   "history": {
     "evolution_log": "data/evolution_log.jsonl",
-    "gap_analysis_log": "data/gap_analysis_log.jsonl",
-    "market_data_log": "data/market_hc_log.jsonl"
+    "gap_analysis_log": "data/gap_analysis.jsonl",
+    "market_data_log": "data/market_hc.jsonl"
   }
 }

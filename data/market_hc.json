@@ -1,100 +1,828 @@
 {
-  "fetched_at": "2026-07-23T06:25:45.448871+00:00",
-  "count": 5,
+  "generated_at": "2026-07-23 19:21",
+  "total_listings": 32,
+  "by_track": {
+    "pm": 8,
+    "product": 8,
+    "ba": 8,
+    "strategy": 8
+  },
+  "salary_ranges": {
+    "pm": "32-42K",
+    "product": "27-36K",
+    "ba": "19-27K",
+    "strategy": "32-39K"
+  },
+  "top_skills": {
+    "pm": [
+      "出海",
+      "ACP",
+      "Scrum",
+      "DevOps",
+      "GDPR"
+    ],
+    "product": [
+      "出海",
+      "ACP",
+      "DevOps",
+      "Scrum",
+      "GDPR"
+    ],
+    "ba": [
+      "出海",
+      "ROI",
+      "ACP",
+      "OKR",
+      "PMP"
+    ],
+    "strategy": [
+      "出海",
+      "C端",
+      "ACP",
+      "OKR",
+      "PMP"
+    ]
+  },
   "listings": [
     {
-      "title": "Backend Developer - Python/FastAPI",
-      "company": "Ant Group",
-      "location": "Hangzhou",
-      "description": "\n            负责金融级后端服务设计与实现。要求：3年以上Python开发经验，\n            熟悉 FastAPI/Django，掌握 PostgreSQL, Redis, Kafka。\n            有微服务、CI/CD经验。熟悉 AWS 或阿里云。\n            ",
-      "url": "https://www.linkedin.com/jobs/view/example2",
-      "extracted_keywords": [
-        "Django",
-        "Python",
-        "Kafka",
-        "AWS",
-        "CI/CD",
-        "PostgreSQL",
-        "FastAPI",
-        "Go",
-        "Redis"
-      ],
+      "id": 759134367,
+      "title": "高级项目经理",
+      "company": "平安科技",
+      "location": "深圳",
+      "salary": {
+        "low": 39.0,
+        "high": 52.0,
+        "unit": "K",
+        "raw": "39-52K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/pm/0",
+      "track": "pm",
+      "track_label": "项目经理",
       "requirements": [
-        "3"
+        "ACP",
+        "DevOps",
+        "GDPR",
+        "SaaS"
       ],
-      "fetched_at": "2026-07-23T06:25:45.448814+00:00"
+      "jd_snippet": "任职要求：ACP认证优先 / DevOps / GDPR / SaaS / 指标体系",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
     },
     {
-      "title": "Senior Backend Engineer",
-      "company": "ByteDance",
-      "location": "Shanghai",
-      "description": "\n            岗位描述：负责抖音后端核心服务开发，使用 Go/Python 构建高并发系统。\n            要求：5年以上后端开发经验，精通 Go 或 Python，熟悉微服务架构，\n            有大规模分布式系统经验优先。熟练掌握 Kubernetes, Docker,\n            PostgreSQL, Redis。有 AI/ML 平台经验优先。\n            ",
-      "url": "https://www.linkedin.com/jobs/view/example1",
-      "extracted_keywords": [
-        "Python",
-        "AI",
-        "Kubernetes",
-        "PostgreSQL",
-        "Go",
-        "Redis",
-        "Docker"
-      ],
+      "id": 237280758,
+      "title": "高级项目经理",
+      "company": "OPPO",
+      "location": "深圳",
+      "salary": {
+        "low": 35.0,
+        "high": 50.0,
+        "unit": "K",
+        "raw": "35-50K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/pm/1",
+      "track": "pm",
+      "track_label": "项目经理",
       "requirements": [
-        "5"
+        "ACP",
+        "Scrum",
+        "出海",
+        "B端",
+        "跨部门"
       ],
-      "fetched_at": "2026-07-23T06:25:45.448701+00:00"
+      "jd_snippet": "任职要求：ACP认证优先 / B端产品 / Scrum经验 / 指标体系 / 跨部门协调 / 出海项目",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
     },
     {
-      "title": "Staff Engineer, Platform",
-      "company": "Shopee",
-      "location": "Singapore (Remote OK)",
-      "description": "\n            Build and scale Shopee's core platform infrastructure.\n            Requirements: 7+ years backend experience, expert in Go/Java,\n            experience with Kubernetes, data pipeline, Kafka, and cloud-native.\n            ",
-      "url": "https://www.linkedin.com/jobs/view/example3",
-      "extracted_keywords": [
-        "Kafka",
-        "Java",
-        "Kubernetes",
-        "Data Pipeline",
-        "Go"
+      "id": 61451462,
+      "title": "高级高级项目经理",
+      "company": "顺丰科技",
+      "location": "深圳",
+      "salary": {
+        "low": 29.0,
+        "high": 39.0,
+        "unit": "K",
+        "raw": "29-39K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/pm/2",
+      "track": "pm",
+      "track_label": "项目经理",
+      "requirements": [
+        "Jira",
+        "出海"
       ],
-      "requirements": [],
-      "fetched_at": "2026-07-23T06:25:45.448829+00:00"
+      "jd_snippet": "任职要求：出海项目 / 数据驱动 / Jira",
+      "relevance_score": 0.5,
+      "collected_at": "2026-07-23 19:21"
     },
     {
-      "title": "Go开发工程师",
+      "id": 843964681,
+      "title": "高级项目经理",
       "company": "字节跳动",
-      "location": "上海",
-      "description": "\n            抖音直播后端Go开发。要求：2年以上Go开发经验，熟悉gRPC、微服务，\n            掌握Kubernetes，了解数据库（MySQL/Redis）。有直播/视频相关经验优先。\n            ",
-      "url": "https://www.zhipin.com/job/example6",
-      "extracted_keywords": [
-        "MySQL",
-        "gRPC",
-        "Kubernetes",
-        "Go",
-        "Redis"
-      ],
+      "location": "深圳",
+      "salary": {
+        "low": 26.0,
+        "high": 31.0,
+        "unit": "K",
+        "raw": "26-31K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/pm/3",
+      "track": "pm",
+      "track_label": "项目经理",
       "requirements": [
-        "2"
+        "OKR",
+        "GDPR",
+        "出海"
       ],
-      "fetched_at": "2026-07-23T06:25:45.448862+00:00"
+      "jd_snippet": "任职要求：GDPR / OKR运营经验 / 出海项目",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
     },
     {
-      "title": "高级后端工程师",
+      "id": 25947873,
+      "title": "资深高级项目经理",
       "company": "美团",
-      "location": "北京",
-      "description": "\n            负责美团外卖后端架构设计与优化。要求：本科及以上，3-5年经验，\n            精通Java/Python，熟悉分布式系统、Kafka、Redis，\n            有高并发系统设计经验，了解机器学习基础。\n            ",
-      "url": "https://www.zhipin.com/job/example5",
-      "extracted_keywords": [
-        "Redis",
-        "Python",
-        "Java",
-        "Kafka"
-      ],
+      "location": "深圳",
+      "salary": {
+        "low": 26.0,
+        "high": 31.0,
+        "unit": "K",
+        "raw": "26-31K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/pm/4",
+      "track": "pm",
+      "track_label": "项目经理",
       "requirements": [
-        "5",
-        "本科及以上"
+        "PMP",
+        "Scrum",
+        "DevOps",
+        "AI",
+        "OKR",
+        "出海"
       ],
-      "fetched_at": "2026-07-23T06:25:45.448850+00:00"
+      "jd_snippet": "任职要求：PMP优先 / OKR运营经验 / Scrum经验 / 出海项目 / AI项目经验 / DevOps",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 579968171,
+      "title": "资深高级项目经理",
+      "company": "米哈游",
+      "location": "上海",
+      "salary": {
+        "low": 37.0,
+        "high": 47.0,
+        "unit": "K",
+        "raw": "37-47K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/pm/5",
+      "track": "pm",
+      "track_label": "项目经理",
+      "requirements": [
+        "ACP",
+        "英语"
+      ],
+      "jd_snippet": "任职要求：英语可工作 / 0-1产品 / ACP认证优先",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 501065874,
+      "title": "高级高级项目经理",
+      "company": "Shopee",
+      "location": "深圳",
+      "salary": {
+        "low": 27.0,
+        "high": 39.0,
+        "unit": "K",
+        "raw": "27-39K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/pm/6",
+      "track": "pm",
+      "track_label": "项目经理",
+      "requirements": [
+        "PMP",
+        "Scrum",
+        "出海"
+      ],
+      "jd_snippet": "任职要求：出海项目 / PMP优先 / Scrum经验 / 数据驱动 / 0-1产品",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 654470876,
+      "title": "高级高级项目经理",
+      "company": "华为",
+      "location": "深圳",
+      "salary": {
+        "low": 38.0,
+        "high": 44.0,
+        "unit": "K",
+        "raw": "38-44K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/pm/7",
+      "track": "pm",
+      "track_label": "项目经理",
+      "requirements": [
+        "ACP",
+        "AI",
+        "ROI"
+      ],
+      "jd_snippet": "任职要求：ACP认证优先 / ROI评估 / AI项目经验",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 407410466,
+      "title": "产品经理",
+      "company": "B站",
+      "location": "上海",
+      "salary": {
+        "low": 30.0,
+        "high": 44.0,
+        "unit": "K",
+        "raw": "30-44K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/product/0",
+      "track": "product",
+      "track_label": "产品经理",
+      "requirements": [
+        "ACP",
+        "DevOps",
+        "GDPR",
+        "SaaS"
+      ],
+      "jd_snippet": "任职要求：ACP认证优先 / DevOps / GDPR / SaaS / 指标体系",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 348929824,
+      "title": "产品经理",
+      "company": "快手",
+      "location": "北京",
+      "salary": {
+        "low": 26.0,
+        "high": 41.0,
+        "unit": "K",
+        "raw": "26-41K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/product/1",
+      "track": "product",
+      "track_label": "产品经理",
+      "requirements": [
+        "ACP",
+        "Scrum",
+        "出海",
+        "B端",
+        "跨部门"
+      ],
+      "jd_snippet": "任职要求：ACP认证优先 / B端产品 / Scrum经验 / 指标体系 / 跨部门协调 / 出海项目",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 180264232,
+      "title": "资深产品经理",
+      "company": "得物",
+      "location": "上海",
+      "salary": {
+        "low": 32.0,
+        "high": 40.0,
+        "unit": "K",
+        "raw": "32-40K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/product/2",
+      "track": "product",
+      "track_label": "产品经理",
+      "requirements": [
+        "ACP",
+        "Jira",
+        "出海"
+      ],
+      "jd_snippet": "任职要求：ACP认证优先 / 出海项目 / 数据驱动 / Jira",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 625822680,
+      "title": "产品经理",
+      "company": "字节跳动",
+      "location": "深圳",
+      "salary": {
+        "low": 22.0,
+        "high": 27.0,
+        "unit": "K",
+        "raw": "22-27K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/product/3",
+      "track": "product",
+      "track_label": "产品经理",
+      "requirements": [
+        "OKR",
+        "GDPR",
+        "出海"
+      ],
+      "jd_snippet": "任职要求：GDPR / OKR运营经验 / 出海项目",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 744907258,
+      "title": "资深产品经理",
+      "company": "小红书",
+      "location": "上海",
+      "salary": {
+        "low": 22.0,
+        "high": 27.0,
+        "unit": "K",
+        "raw": "22-27K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/product/4",
+      "track": "product",
+      "track_label": "产品经理",
+      "requirements": [
+        "PMP",
+        "Scrum",
+        "DevOps",
+        "AI",
+        "OKR",
+        "出海"
+      ],
+      "jd_snippet": "任职要求：PMP优先 / OKR运营经验 / Scrum经验 / 出海项目 / AI项目经验 / DevOps",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 542748231,
+      "title": "资深产品经理",
+      "company": "大疆",
+      "location": "深圳",
+      "salary": {
+        "low": 27.0,
+        "high": 37.0,
+        "unit": "K",
+        "raw": "27-37K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/product/5",
+      "track": "product",
+      "track_label": "产品经理",
+      "requirements": [
+        "ACP",
+        "英语"
+      ],
+      "jd_snippet": "任职要求：英语可工作 / 0-1产品 / ACP认证优先",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 985467903,
+      "title": "AI产品经理",
+      "company": "Shopee",
+      "location": "深圳",
+      "salary": {
+        "low": 30.0,
+        "high": 37.0,
+        "unit": "K",
+        "raw": "30-37K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/product/6",
+      "track": "product",
+      "track_label": "产品经理",
+      "requirements": [
+        "DevOps",
+        "出海",
+        "B端"
+      ],
+      "jd_snippet": "任职要求：B端产品 / 0-1产品 / DevOps / 出海项目",
+      "relevance_score": 0.5,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 69095243,
+      "title": "产品经理",
+      "company": "一加科技",
+      "location": "深圳",
+      "salary": {
+        "low": 29.0,
+        "high": 34.0,
+        "unit": "K",
+        "raw": "29-34K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/product/7",
+      "track": "product",
+      "track_label": "产品经理",
+      "requirements": [
+        "PMP",
+        "Scrum",
+        "AI",
+        "出海",
+        "C端"
+      ],
+      "jd_snippet": "任职要求：PMP优先 / C端产品 / Scrum经验 / 出海项目 / AI项目经验 / 用户增长",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 338286000,
+      "title": "资深商业分析",
+      "company": "华为",
+      "location": "深圳",
+      "salary": {
+        "low": 20.0,
+        "high": 25.0,
+        "unit": "K",
+        "raw": "20-25K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/ba/0",
+      "track": "ba",
+      "track_label": "商业分析",
+      "requirements": [
+        "SaaS",
+        "C端",
+        "ROI"
+      ],
+      "jd_snippet": "任职要求：SaaS / 指标体系 / ROI评估 / C端产品",
+      "relevance_score": 0.5,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 596603681,
+      "title": "商业分析",
+      "company": "腾讯",
+      "location": "深圳",
+      "salary": {
+        "low": 16.0,
+        "high": 27.0,
+        "unit": "K",
+        "raw": "16-27K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/ba/1",
+      "track": "ba",
+      "track_label": "商业分析",
+      "requirements": [
+        "跨部门"
+      ],
+      "jd_snippet": "任职要求：用户增长 / 指标体系 / 跨部门协调",
+      "relevance_score": 0.5,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 642808052,
+      "title": "资深商业分析",
+      "company": "字节跳动",
+      "location": "深圳",
+      "salary": {
+        "low": 22.0,
+        "high": 30.0,
+        "unit": "K",
+        "raw": "22-30K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/ba/2",
+      "track": "ba",
+      "track_label": "商业分析",
+      "requirements": [
+        "ACP",
+        "Jira",
+        "出海"
+      ],
+      "jd_snippet": "任职要求：ACP认证优先 / 出海项目 / 数据驱动 / Jira",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 875756141,
+      "title": "商业分析",
+      "company": "平安银行",
+      "location": "深圳",
+      "salary": {
+        "low": 18.0,
+        "high": 23.0,
+        "unit": "K",
+        "raw": "18-23K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/ba/3",
+      "track": "ba",
+      "track_label": "商业分析",
+      "requirements": [
+        "OKR",
+        "GDPR",
+        "出海"
+      ],
+      "jd_snippet": "任职要求：GDPR / OKR运营经验 / 出海项目",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 331974058,
+      "title": "资深商业分析",
+      "company": "招商银行",
+      "location": "深圳",
+      "salary": {
+        "low": 18.0,
+        "high": 23.0,
+        "unit": "K",
+        "raw": "18-23K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/ba/4",
+      "track": "ba",
+      "track_label": "商业分析",
+      "requirements": [
+        "PMP",
+        "Scrum",
+        "DevOps",
+        "AI",
+        "OKR",
+        "出海"
+      ],
+      "jd_snippet": "任职要求：PMP优先 / OKR运营经验 / Scrum经验 / 出海项目 / AI项目经验 / DevOps",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 597560239,
+      "title": "资深商业分析",
+      "company": "阿里云",
+      "location": "杭州",
+      "salary": {
+        "low": 23.0,
+        "high": 33.0,
+        "unit": "K",
+        "raw": "23-33K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/ba/5",
+      "track": "ba",
+      "track_label": "商业分析",
+      "requirements": [
+        "ACP",
+        "英语"
+      ],
+      "jd_snippet": "任职要求：英语可工作 / 0-1产品 / ACP认证优先",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 799259251,
+      "title": "高级商业分析",
+      "company": "美团",
+      "location": "深圳",
+      "salary": {
+        "low": 18.0,
+        "high": 30.0,
+        "unit": "K",
+        "raw": "18-30K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/ba/6",
+      "track": "ba",
+      "track_label": "商业分析",
+      "requirements": [
+        "PMP",
+        "Scrum",
+        "出海"
+      ],
+      "jd_snippet": "任职要求：出海项目 / PMP优先 / Scrum经验 / 数据驱动 / 0-1产品",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 199314734,
+      "title": "商业分析",
+      "company": "京东",
+      "location": "北京",
+      "salary": {
+        "low": 17.0,
+        "high": 25.0,
+        "unit": "K",
+        "raw": "17-25K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/ba/7",
+      "track": "ba",
+      "track_label": "商业分析",
+      "requirements": [
+        "AI",
+        "ROI"
+      ],
+      "jd_snippet": "任职要求：ROI评估 / AI项目经验 / 指标体系",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 802161906,
+      "title": "资深战略规划",
+      "company": "平安集团",
+      "location": "深圳",
+      "salary": {
+        "low": 30.0,
+        "high": 35.0,
+        "unit": "K",
+        "raw": "30-35K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/strategy/0",
+      "track": "strategy",
+      "track_label": "战略规划",
+      "requirements": [
+        "SaaS",
+        "C端",
+        "ROI"
+      ],
+      "jd_snippet": "任职要求：SaaS / 指标体系 / ROI评估 / C端产品",
+      "relevance_score": 0.5,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 662662579,
+      "title": "战略规划",
+      "company": "腾讯",
+      "location": "深圳",
+      "salary": {
+        "low": 22.0,
+        "high": 33.0,
+        "unit": "K",
+        "raw": "22-33K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/strategy/1",
+      "track": "strategy",
+      "track_label": "战略规划",
+      "requirements": [
+        "跨部门"
+      ],
+      "jd_snippet": "任职要求：用户增长 / 指标体系 / 跨部门协调",
+      "relevance_score": 0.5,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 637207317,
+      "title": "资深战略规划",
+      "company": "阿里巴巴",
+      "location": "杭州",
+      "salary": {
+        "low": 34.0,
+        "high": 42.0,
+        "unit": "K",
+        "raw": "34-42K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/strategy/2",
+      "track": "strategy",
+      "track_label": "战略规划",
+      "requirements": [
+        "ACP",
+        "Jira",
+        "出海"
+      ],
+      "jd_snippet": "任职要求：ACP认证优先 / 出海项目 / 数据驱动 / Jira",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 827378928,
+      "title": "战略规划",
+      "company": "美团",
+      "location": "深圳",
+      "salary": {
+        "low": 26.0,
+        "high": 31.0,
+        "unit": "K",
+        "raw": "26-31K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/strategy/3",
+      "track": "strategy",
+      "track_label": "战略规划",
+      "requirements": [
+        "OKR",
+        "GDPR",
+        "出海"
+      ],
+      "jd_snippet": "任职要求：GDPR / OKR运营经验 / 出海项目",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 122234486,
+      "title": "资深战略规划",
+      "company": "字节跳动",
+      "location": "深圳",
+      "salary": {
+        "low": 26.0,
+        "high": 31.0,
+        "unit": "K",
+        "raw": "26-31K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/strategy/4",
+      "track": "strategy",
+      "track_label": "战略规划",
+      "requirements": [
+        "PMP",
+        "Scrum",
+        "DevOps",
+        "AI",
+        "OKR",
+        "出海"
+      ],
+      "jd_snippet": "任职要求：PMP优先 / OKR运营经验 / Scrum经验 / 出海项目 / AI项目经验 / DevOps",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 186812725,
+      "title": "资深战略规划",
+      "company": "联想",
+      "location": "北京",
+      "salary": {
+        "low": 37.0,
+        "high": 47.0,
+        "unit": "K",
+        "raw": "37-47K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/strategy/5",
+      "track": "strategy",
+      "track_label": "战略规划",
+      "requirements": [
+        "ACP",
+        "英语"
+      ],
+      "jd_snippet": "任职要求：英语可工作 / 0-1产品 / ACP认证优先",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 145545137,
+      "title": "AI战略规划",
+      "company": "京东",
+      "location": "北京",
+      "salary": {
+        "low": 42.0,
+        "high": 49.0,
+        "unit": "K",
+        "raw": "42-49K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/strategy/6",
+      "track": "strategy",
+      "track_label": "战略规划",
+      "requirements": [
+        "DevOps",
+        "出海",
+        "B端"
+      ],
+      "jd_snippet": "任职要求：B端产品 / 0-1产品 / DevOps / 出海项目",
+      "relevance_score": 0.5,
+      "collected_at": "2026-07-23 19:21"
+    },
+    {
+      "id": 483667992,
+      "title": "战略规划",
+      "company": "华为",
+      "location": "深圳",
+      "salary": {
+        "low": 41.0,
+        "high": 46.0,
+        "unit": "K",
+        "raw": "41-46K"
+      },
+      "source": "模拟",
+      "url": "https://example.com/job/strategy/7",
+      "track": "strategy",
+      "track_label": "战略规划",
+      "requirements": [
+        "PMP",
+        "Scrum",
+        "AI",
+        "出海",
+        "C端"
+      ],
+      "jd_snippet": "任职要求：PMP优先 / C端产品 / Scrum经验 / 出海项目 / AI项目经验 / 用户增长",
+      "relevance_score": 0.7,
+      "collected_at": "2026-07-23 19:21"
     }
   ]
 }
