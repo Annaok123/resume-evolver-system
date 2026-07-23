@@ -1,0 +1,61 @@
+{
+  "version": "2.0.0",
+  "owner": {
+    "name": "周娜娜",
+    "target_roles": {
+      "pm": "高级项目经理 / AI项目经理",
+      "product": "产品经理 / AI产品经理",
+      "ba": "商业分析师 / 研发效能",
+      "strategy": "战略规划 / 项目总监"
+    },
+    "target_city": "深圳",
+    "email": "zhounanaok@163.com",
+    "phone": "185-5977-3382"
+  },
+  "monitoring": {
+    "enabled": true,
+    "keywords_by_track": {
+      "pm": ["高级项目经理", "AI项目经理", "研发项目经理", "PMO项目管理", "项目集经理"],
+      "product": ["产品经理", "AI产品经理", "数字化产品经理", "C端产品经理"],
+      "ba": ["商业分析", "研发效能", "数据分析", "BA", "商业数据分析师"],
+      "strategy": ["战略规划", "OKR运营", "项目总监", "经营分析", "策略经理"]
+    },
+    "locations": ["深圳", "广州", "上海"],
+    "sources": ["linkedin", "zhipin", "liepin", "lagou"],
+    "interval_hours": 168,
+    "max_listings_per_run": 30
+  },
+  "resume_tracks": {
+    "tracks": ["pm", "product", "ba", "strategy"],
+    "track_labels": {
+      "pm": "项目经理",
+      "product": "产品经理",
+      "ba": "商业分析",
+      "strategy": "战略规划"
+    },
+    "data_dir": "data/resumes",
+    "active_track": "pm"
+  },
+  "evolution": {
+    "auto_approve_minor": false,
+    "require_approval_threshold": "major",
+    "max_skills_added_per_run": 3,
+    "min_relevance_score": 0.6,
+    "evolve_on_schedule": true,
+    "evolution_interval_hours": 168,
+    "evolve_all_tracks": true
+  },
+  "website": {
+    "output_path": "public/index.html",
+    "template": "portfolio",
+    "theme": "professional",
+    "show_all_tracks": true,
+    "base_url": "",
+    "auto_deploy": false
+  },
+  "history": {
+    "evolution_log": "data/evolution_log.jsonl",
+    "gap_analysis_log": "data/gap_analysis_log.jsonl",
+    "market_data_log": "data/market_hc_log.jsonl"
+  }
+}

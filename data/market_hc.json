@@ -1,0 +1,100 @@
+{
+  "fetched_at": "2026-07-23T06:25:45.448871+00:00",
+  "count": 5,
+  "listings": [
+    {
+      "title": "Backend Developer - Python/FastAPI",
+      "company": "Ant Group",
+      "location": "Hangzhou",
+      "description": "\n            负责金融级后端服务设计与实现。要求：3年以上Python开发经验，\n            熟悉 FastAPI/Django，掌握 PostgreSQL, Redis, Kafka。\n            有微服务、CI/CD经验。熟悉 AWS 或阿里云。\n            ",
+      "url": "https://www.linkedin.com/jobs/view/example2",
+      "extracted_keywords": [
+        "Django",
+        "Python",
+        "Kafka",
+        "AWS",
+        "CI/CD",
+        "PostgreSQL",
+        "FastAPI",
+        "Go",
+        "Redis"
+      ],
+      "requirements": [
+        "3"
+      ],
+      "fetched_at": "2026-07-23T06:25:45.448814+00:00"
+    },
+    {
+      "title": "Senior Backend Engineer",
+      "company": "ByteDance",
+      "location": "Shanghai",
+      "description": "\n            岗位描述：负责抖音后端核心服务开发，使用 Go/Python 构建高并发系统。\n            要求：5年以上后端开发经验，精通 Go 或 Python，熟悉微服务架构，\n            有大规模分布式系统经验优先。熟练掌握 Kubernetes, Docker,\n            PostgreSQL, Redis。有 AI/ML 平台经验优先。\n            ",
+      "url": "https://www.linkedin.com/jobs/view/example1",
+      "extracted_keywords": [
+        "Python",
+        "AI",
+        "Kubernetes",
+        "PostgreSQL",
+        "Go",
+        "Redis",
+        "Docker"
+      ],
+      "requirements": [
+        "5"
+      ],
+      "fetched_at": "2026-07-23T06:25:45.448701+00:00"
+    },
+    {
+      "title": "Staff Engineer, Platform",
+      "company": "Shopee",
+      "location": "Singapore (Remote OK)",
+      "description": "\n            Build and scale Shopee's core platform infrastructure.\n            Requirements: 7+ years backend experience, expert in Go/Java,\n            experience with Kubernetes, data pipeline, Kafka, and cloud-native.\n            ",
+      "url": "https://www.linkedin.com/jobs/view/example3",
+      "extracted_keywords": [
+        "Kafka",
+        "Java",
+        "Kubernetes",
+        "Data Pipeline",
+        "Go"
+      ],
+      "requirements": [],
+      "fetched_at": "2026-07-23T06:25:45.448829+00:00"
+    },
+    {
+      "title": "Go开发工程师",
+      "company": "字节跳动",
+      "location": "上海",
+      "description": "\n            抖音直播后端Go开发。要求：2年以上Go开发经验，熟悉gRPC、微服务，\n            掌握Kubernetes，了解数据库（MySQL/Redis）。有直播/视频相关经验优先。\n            ",
+      "url": "https://www.zhipin.com/job/example6",
+      "extracted_keywords": [
+        "MySQL",
+        "gRPC",
+        "Kubernetes",
+        "Go",
+        "Redis"
+      ],
+      "requirements": [
+        "2"
+      ],
+      "fetched_at": "2026-07-23T06:25:45.448862+00:00"
+    },
+    {
+      "title": "高级后端工程师",
+      "company": "美团",
+      "location": "北京",
+      "description": "\n            负责美团外卖后端架构设计与优化。要求：本科及以上，3-5年经验，\n            精通Java/Python，熟悉分布式系统、Kafka、Redis，\n            有高并发系统设计经验，了解机器学习基础。\n            ",
+      "url": "https://www.zhipin.com/job/example5",
+      "extracted_keywords": [
+        "Redis",
+        "Python",
+        "Java",
+        "Kafka"
+      ],
+      "requirements": [
+        "5",
+        "本科及以上"
+      ],
+      "fetched_at": "2026-07-23T06:25:45.448850+00:00"
+    }
+  ]
+}
