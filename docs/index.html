@@ -293,6 +293,29 @@
         }
         .hot-tag:hover { transform: translateY(-1px); }
 
+        /* ─── Compact Job Row (v4) ─── */
+        .job-row {
+            display: grid; grid-template-columns: 1fr auto;
+            padding: 8px 10px; margin-bottom: 4px;
+            background: var(--surface); border-radius: 8px;
+            border: 1px solid transparent; transition: all 0.2s;
+        }
+        .job-row:hover { border-color: var(--border-2); background: var(--card-2); }
+        .job-name { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+        .job-sal { font-size: 0.78rem; font-weight: 700; color: var(--green); font-family:'JetBrains Mono',monospace; white-space:nowrap; }
+        .job-co { grid-column: 1 / -1; font-size: 0.7rem; color: var(--text-3); margin-top: 2px; }
+        .job-tgs { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+        .tg {
+            font-size: 0.65rem; padding: 1px 7px; border-radius: 4px;
+            background: var(--card-2); color: var(--text-3); border: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .tg.pm    { background: rgba(129,140,248,0.10); color: var(--pm); border-color: rgba(129,140,248,0.2); }
+        .tg.prod  { background: rgba(192,132,252,0.10); color: var(--product); border-color: rgba(192,132,252,0.2); }
+        .tg.ba    { background: rgba(34,211,238,0.10); color: var(--ba); border-color: rgba(34,211,238,0.2); }
+        .tg.strat { background: rgba(251,191,36,0.10); color: var(--strategy); border-color: rgba(251,191,36,0.2); }
+        .tg.src   { background: var(--surface); color: var(--text-3); }
+
         /* ─── Suggestions ─── */
         .suggestion {
             display: flex; align-items: flex-start; gap: 12px;
@@ -346,19 +369,83 @@
         .modal-close:hover { color: var(--text); }
         .modal-body { padding: 24px; }
 
-        /* Resume content styles */
-        .resume-content { font-size: 0.85rem; line-height: 1.8; }
-        .resume-section { margin-bottom: 20px; }
-        .resume-section-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
-        .resume-job { margin-bottom: 14px; }
-        .resume-job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
-        .resume-job-title { font-weight: 700; font-size: 0.9rem; }
+        /* Resume content styles — full visual resume card */
+        .resume-card {
+            background: var(--bg-2);
+            border: 1px solid var(--border-2);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .resume-card-head {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 22px 24px;
+            background: linear-gradient(135deg, rgba(129,140,248,0.08), rgba(192,132,252,0.06));
+            border-bottom: 1px solid var(--border);
+        }
+        .resume-avatar {
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #818cf8, #c084fc);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; font-weight: 800; color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 4px 20px rgba(129,140,248,0.3);
+            letter-spacing: -0.03em;
+        }
+        .resume-identity { flex: 1; }
+        .resume-name { font-size: 1.2rem; font-weight: 800; margin-bottom: 3px; }
+        .resume-target { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+        .resume-contacts { display: flex; gap: 16px; flex-wrap: wrap; }
+        .resume-contact-item { font-size: 0.75rem; color: var(--text-2); display: flex; align-items: center; gap: 4px; }
+        .resume-section { padding: 18px 24px; border-bottom: 1px solid var(--border); }
+        .resume-section:last-child { border-bottom: none; }
+        .resume-section-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+        .resume-section-title .st-icon { font-size: 0.85rem; }
+        .resume-section.pm  .resume-section-title { color: var(--pm); }
+        .resume-section.product .resume-section-title { color: var(--product); }
+        .resume-section.ba    .resume-section-title { color: var(--ba); }
+        .resume-section.strategy .resume-section-title { color: var(--strategy); }
+        .resume-summary { font-size: 0.84rem; color: var(--text-2); line-height: 1.75; }
+        .resume-metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .resume-metric { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px; text-align: center; }
+        .resume-metric-val { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 4px; }
+        .resume-metric-lbl { font-size: 0.7rem; color: var(--text-3); font-family: 'JetBrains Mono', monospace; }
+        .resume-job { margin-bottom: 16px; }
+        .resume-job:last-child { margin-bottom: 0; }
+        .resume-job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; flex-wrap: wrap; gap: 4px; }
+        .resume-job-title { font-weight: 700; font-size: 0.88rem; }
         .resume-job-period { font-size: 0.72rem; color: var(--text-3); font-family: 'JetBrains Mono', monospace; }
-        .resume-job-company { font-size: 0.8rem; color: var(--accent); margin-bottom: 6px; }
-        .resume-bullets { list-style: none; }
-        .resume-bullets li { font-size: 0.82rem; color: var(--text-2); padding: 2px 0; padding-left: 14px; position: relative; }
-        .resume-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8em; }
-        .resume-actions { display: flex; gap: 10px; margin-top: 20px; }
+        .resume-job-company { font-size: 0.8rem; margin-bottom: 7px; font-weight: 600; }
+        .resume-bullets { list-style: none; padding: 0; }
+        .resume-bullets li { font-size: 0.82rem; color: var(--text-2); padding: 3px 0; padding-left: 16px; position: relative; line-height: 1.6; }
+        .resume-bullets li::before { content: '▸'; position: absolute; left: 0; font-size: 0.8em; top: 5px; }
+        .resume-skills { display: flex; flex-wrap: wrap; gap: 7px; }
+        .resume-skill-tag { font-size: 0.78rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid; font-family: 'JetBrains Mono', monospace; }
+        .resume-education { display: flex; align-items: center; gap: 12px; padding: 8px 0; }
+        .resume-edu-icon { font-size: 1.6rem; }
+        .resume-edu-info { font-size: 0.85rem; }
+        .resume-edu-name { font-weight: 700; }
+        .resume-edu-detail { font-size: 0.78rem; color: var(--text-2); }
+        .resume-actions { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+        .resume-company-tag { display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-bottom: 6px; }
+
+        /* Data sources panel */
+        .ds-panel { margin-top: 16px; }
+        .ds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .ds-item { display: flex; align-items: center; gap: 8px; padding: 9px 12px; background: var(--card-2); border: 1px solid var(--border); border-radius: 10px; }
+        .ds-icon { font-size: 1rem; flex-shrink: 0; }
+        .ds-name { font-size: 0.8rem; font-weight: 600; flex: 1; }
+        .ds-status { font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 20px; font-family: 'JetBrains Mono', monospace; }
+        .ds-status.ok { background: var(--green-g); color: var(--green); }
+        .ds-status.wait { background: rgba(251,191,36,0.1); color: var(--strategy); }
+        .ds-history { margin-top: 14px; }
+        .ds-hist-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border-bottom: 1px solid var(--border); font-size: 0.8rem; }
+        .ds-hist-item:last-child { border-bottom: none; }
+        .ds-hist-date { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-3); }
+        .ds-hist-count { font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+        .ds-stat-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; background: var(--accent-g); color: var(--accent); border: 1px solid var(--accent-g2); font-family: 'JetBrains Mono', monospace; }
 
         @media (max-width: 900px) {
             .kpi-row { grid-template-columns: repeat(2, 1fr); }
@@ -444,11 +531,11 @@
         <div class="kpi green">
             <div class="kpi-header">
                 <div class="kpi-icon">🔍</div>
-                <div class="kpi-pulse up">+8 新</div>
+                <div class="kpi-pulse up">+1 新</div>
             </div>
-            <div class="kpi-val">28</div>
+            <div class="kpi-val">29</div>
             <div class="kpi-lbl">本周采集有效岗位</div>
-            <div class="kpi-sub">上次: 2026-07-23 13:47</div>
+            <div class="kpi-sub">上次: 2026-07-24 17:42</div>
         </div>
         <div class="kpi">
             <div class="kpi-header">
@@ -479,218 +566,179 @@
         </div>
     </div>
 
-    <!-- Market + Gap -->
-    <div class="grid-2" style="margin-bottom: 16px;">
+    <!-- Market + Gap + Suggestions (3-column layout) -->
+    <div style="display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap:16px; margin-bottom:16px;">
 
-        <!-- Market Listings -->
-        <div class="card">
+        <!-- Market Listings (Left - wider, more jobs) -->
+        <div class="card" style="grid-row: span 2;">
             <div class="card-head">
-                <div class="card-title">📋 最新采集岗位 <span style="font-size:0.75rem;color:var(--text-3);font-weight:400;">2026-07-23</span></div>
-                <button class="btn btn-sm" onclick="runMonitor()">🔄 扫描市场</button>
+                <div class="card-title">📋 市场岗位 <span style="font-size:0.72rem;color:var(--green);font-weight:600;">29岗 · v4真实数据</span> <span style="font-size:0.7rem;color:var(--text-3);font-weight:400;">2026-07-24</span></div>
+                <div style="display:flex;gap:6px;">
+                    <button class="btn btn-sm" onclick="runMonitor()">🔄 扫描</button>
+                    <button class="btn btn-sm" onclick="document.getElementById('dataSourcePanel').style.display=document.getElementById('dataSourcePanel').style.display==='block'?'none':'block'">🔗 数据源</button>
+                </div>
             </div>
-            <div class="card-body" style="max-height:520px;overflow-y:auto;padding-top:0;">
-                <div class="track-divider">
-                    <span class="track-divider-label" style="color:var(--pm)">🎯 项目经理</span>
-                </div>
-                <div class="listing">
-                    <div class="listing-top">
-                        <div class="listing-title">AI软件项目交付项目经理</div>
-                        <div class="listing-salary">20-40K</div>
-                    </div>
-                    <div class="listing-company">某深圳计算机软件公司 · 北京/西安/上海</div>
-                    <div class="listing-tags">
-                        <span class="tag tag-track pm">PM</span><span class="tag tag-src">猎聘</span>
-                        <span class="tag" style="background:var(--card-2);color:var(--text-3);border:1px solid var(--border)">AI交付</span>
-                        <span class="tag" style="background:var(--card-2);color:var(--text-3);border:1px solid var(--border)">GDPR</span>
-                    </div>
-                </div>
-                <div class="listing">
-                    <div class="listing-top">
-                        <div class="listing-title">项目经理（智慧城市）</div>
-                        <div class="listing-salary neg">面议</div>
-                    </div>
-                    <div class="listing-company">中科大脑 · 深圳</div>
-                    <div class="listing-tags">
-                        <span class="tag tag-track pm">PM</span><span class="tag tag-src">BOSS</span>
-                        <span class="tag" style="background:var(--card-2);color:var(--text-3);border:1px solid var(--border)">PMP优先</span>
-                    </div>
-                </div>
+            <div class="card-body" style="max-height:780px;overflow-y:auto;padding-top:0;">
+                
+                <!-- PM Track -->
+                <div class="track-divider"><span class="track-divider-label" style="color:var(--pm)">🎯 项目经理 (8)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">20-40K</span></div>
+                <div class="job-row"><div class="job-name">高级项目经理</div><div class="job-sal">20-35K</div><div class="job-co">智能家居公司 · 深圳</div><div class="job-tgs"><span class="tg pm">PMP优先</span><span class="tg src">猎聘</span><span class="tg">5-8年</span></div></div>
+                <div class="job-row"><div class="job-name">Program Manager</div><div class="job-sal">30-35K·14薪</div><div class="job-co">消费类电子 · 深圳</div><div class="job-tgs"><span class="tg pm">研发PM</span><span class="tg src">BOSS</span><span class="tg">10年+</span></div></div>
+                <div class="job-row"><div class="job-name">AI软件项目交付PM</div><div class="job-sal">20-40K</div><div class="job-co">计算机软件 · 深圳/北京/西安</div><div class="job-tgs"><span class="tg pm">AI交付</span><span class="tg src">猎聘</span><span class="tg">GDPR</span></div></div>
+                <div class="job-row"><div class="job-name">安服项目经理Leader</div><div class="job-sal">30-40K</div><div class="job-co">网络安全公司 · 深圳</div><div class="job-tgs"><span class="tg pm">安全PM</span><span class="tg src">BOSS</span><span class="tg">D轮</span></div></div>
+                <div class="job-row"><div class="job-name">IPD研发负责人</div><div class="job-sal">25-40K</div><div class="job-co">锦凌电子 · 深圳宝安</div><div class="job-tgs"><span class="tg pm">IPD流程</span><span class="tg src">BOSS</span><span class="tg">连接器</span></div></div>
+                <div class="job-row"><div class="job-name">项目经理(智慧城市)</div><div class="job-sal">面议</div><div class="job-co">中科大脑 · 深圳</div><div class="job-tgs"><span class="tg pm">PMP</span><span class="tg src">BOSS</span><span class="tg">智慧城市</span></div></div>
+                <div class="job-row"><div class="job-name">高级项目经理</div><div class="job-sal">面议</div><div class="job-co">蘑菇财富 · 深圳</div><div class="job-tgs"><span class="tg pm">PMP</span><span class="tg src">猎聘</span><span class="tg">全生命周期</span></div></div>
+                <div class="job-row"><div class="job-name">高级工程项目经理</div><div class="job-sal">面议</div><div class="job-co">德维森实业 · 深圳</div><div class="job-tgs"><span class="tg pm">DCS/PLC</span><span class="tg src">官网</span><span class="tg">自动化</span></div></div>
 
-                <div class="track-divider">
-                    <span class="track-divider-label" style="color:var(--product)">📱 产品经理</span>
-                </div>
-                <div class="listing">
-                    <div class="listing-top">
-                        <div class="listing-title">AI产品经理</div>
-                        <div class="listing-salary">18-30K</div>
-                    </div>
-                    <div class="listing-company">字节/腾讯/美团等大厂 · 深圳</div>
-                    <div class="listing-tags">
-                        <span class="tag tag-track product">产品</span><span class="tag tag-src">BOSS/猎聘</span>
-                        <span class="tag" style="background:var(--card-2);color:var(--text-3);border:1px solid var(--border)">数据驱动</span>
-                        <span class="tag" style="background:var(--card-2);color:var(--text-3);border:1px solid var(--border)">AI产品化</span>
-                    </div>
-                </div>
+                <!-- Product Track -->
+                <div class="track-divider"><span class="track-divider-label" style="color:var(--product)">📱 产品经理 (7)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">18-65K</span></div>
+                <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">18-28K·14薪</div><div class="job-co">Xmind(爱思) · 深圳南山</div><div class="job-tgs"><span class="tg prod">AIGC</span><span class="tg src">BOSS</span><span class="tg">C端交互</span></div></div>
+                <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">18-25K</div><div class="job-co">海雀科技 · 深圳南山</div><div class="job-tgs"><span class="tg prod">LLM/RAG</span><span class="tg src">猎聘</span><span class="tg">Prompt</span></div></div>
+                <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">面议</div><div class="job-co">WPS金山 · 深圳</div><div class="job-tgs"><span class="tg prod">NLP/CV</span><span class="tg src">猎聘</span><span class="tg">商业化</span></div></div>
+                <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">30-50K·14薪</div><div class="job-co">智能推荐公司 · 深圳宝安</div><div class="job-tgs"><span class="tg prod">推荐算法</span><span class="tg src">猎聘</span><span class="tg">2B平台</span></div></div>
+                <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">25-40K</div><div class="job-co">人工智能公司 · 深圳福田</div><div class="job-tgs"><span class="tg prod">社区型产品</span><span class="tg src">猎聘</span><span class="tg">数据治理</span></div></div>
+                <div class="job-row"><div class="job-name">AI产品经理(大屏)</div><div class="job-sal">40-65万/年</div><div class="job-co">中长视频平台 · 深圳</div><div class="job-tgs"><span class="tg prod">ChatGPT</span><span class="tg src">智联</span><span class="tg">电视端</span></div></div>
+                <div class="job-row"><div class="job-name">AI产品策划</div><div class="job-sal">20-30K·14薪</div><div class="job-co">Xmind · 深圳南山</div><div class="job-tgs"><span class="tg prod">AI对话</span><span class="tg src">BOSS</span><span class="tg">情感陪伴</span></div></div>
 
-                <div class="track-divider">
-                    <span class="track-divider-label" style="color:var(--ba)">📊 商业分析</span>
-                </div>
-                <div class="listing">
-                    <div class="listing-top">
-                        <div class="listing-title">BA业务分析师（资深）</div>
-                        <div class="listing-salary">18-25K</div>
-                    </div>
-                    <div class="listing-company">头部大厂 · 深圳南油</div>
-                    <div class="listing-tags">
-                        <span class="tag tag-track ba">BA</span><span class="tag tag-src">猎聘</span>
-                        <span class="tag" style="background:var(--rose-g);color:var(--rose);border:1px solid rgba(248,113,113,0.2)">SQL优先</span>
-                        <span class="tag" style="background:var(--card-2);color:var(--text-3);border:1px solid var(--border)">英语</span>
-                    </div>
-                </div>
-                <div class="listing">
-                    <div class="listing-top">
-                        <div class="listing-title">商业数据分析（RCC瑞达恒）</div>
-                        <div class="listing-salary neg">面议</div>
-                    </div>
-                    <div class="listing-company">RCC瑞达恒 · 深圳</div>
-                    <div class="listing-tags">
-                        <span class="tag tag-track ba">BA</span><span class="tag tag-src">BOSS</span>
-                        <span class="tag" style="background:var(--rose-g);color:var(--rose);border:1px solid rgba(248,113,113,0.2)">英语口语</span>
-                        <span class="tag" style="background:var(--card-2);color:var(--text-3);border:1px solid var(--border)">定量分析</span>
-                    </div>
-                </div>
+                <!-- BA Track -->
+                <div class="track-divider"><span class="track-divider-label" style="color:var(--ba)">📊 商业分析 (8)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">12-50K</span></div>
+                <div class="job-row"><div class="job-name">BA业务分析师(资深)</div><div class="job-sal">18-25K</div><div class="job-co">头部大厂 · 深圳南油</div><div class="job-tgs"><span class="tg ba">SQL/Tableau</span><span class="tg src">猎聘</span><span class="tg">六险一金</span></div></div>
+                <div class="job-row"><div class="job-name">BA需求分析师(OMS)</div><div class="job-sal">12-15K</div><div class="job-co">宝尊电商 · 深圳龙岗</div><div class="job-tgs"><span class="tg ba">OMS系统</span><span class="tg src">BOSS</span><span class="tg">3年+</span></div></div>
+                <div class="job-row"><div class="job-name">高级商业分析师</div><div class="job-sal">面议</div><div class="job-co">互联网头部 · 深圳</div><div class="job-tgs"><span class="tg ba">指标体系</span><span class="tg src">猎聘</span><span class="tg">算法模型</span></div></div>
+                <div class="job-row"><div class="job-name">商业分析资深专员</div><div class="job-sal">面议</div><div class="job-co">大型集团 · 深圳</div><div class="job-tgs"><span class="tg ba">Excel/PPT</span><span class="tg src">猎聘</span><span class="tg">咨询背景</span></div></div>
+                <div class="job-row"><div class="job-name">商业分析师</div><div class="job-sal">面议</div><div class="job-co">京东集团 · 深圳</div><div class="job-tgs"><span class="tg ba">Power BI</span><span class="tg src">BOSS</span><span class="tg">Python</span></div></div>
+                <div class="job-row"><div class="job-name">战略及商业分析师</div><div class="job-sal">25-50K·14薪</div><div class="job-co">顺丰同城 · 深圳南山</div><div class="job-tgs"><span class="tg ba">CFA优先</span><span class="tg src">猎聘</span><span class="tg">硕士+</span></div></div>
+                <div class="job-row"><div class="job-name">BA业务分析师(BA)</div><div class="job-sal">面议</div><div class="job-co">四方精创 · 深圳</div><div class="job-tgs"><span class="tg ba">银行业务</span><span class="tg src">BOSS</span><span class="tg">UML/英语</span></div></div>
+                <div class="job-row"><div class="job-name">HRIS方向业务分析师</div><div class="job-sal">17-24K·14薪</div><div class="job-co">海辰储能 · 深圳龙华</div><div class="job-tgs"><span class="tg ba">HRIS系统</span><span class="tg src">猎聘</span><span class="tg">8年+</span></div></div>
 
-                <div class="track-divider">
-                    <span class="track-divider-label" style="color:var(--strategy)">🏛️ 战略规划</span>
-                </div>
-                <div class="listing">
-                    <div class="listing-top">
-                        <div class="listing-title">战略分析</div>
-                        <div class="listing-salary">18-25K·15薪</div>
+                <!-- Strategy Track -->
+                <div class="track-divider"><span class="track-divider-label" style="color:var(--strategy)">🏛️ 战略规划 (6)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">面议-110K</span></div>
+                <div class="job-row"><div class="job-name">战略管理总监</div><div class="job-sal">面议</div><div class="job-co">出海消费类公司 · 深圳</div><div class="job-tgs"><span class="tg strat">出海战略</span><span class="tg src">猎聘</span><span class="tg">5年+咨询</span></div></div>
+                <div class="job-row"><div class="job-name">战略规划经理</div><div class="job-sal">面议</div><div class="job-co">大型集团 · 深圳</div><div class="job-tgs"><span class="tg strat">战略解码</span><span class="tg src">猎聘</span><span class="tg">专题研究</span></div></div>
+                <div class="job-row"><div class="job-name">战略规划总监</div><div class="job-sal">面议</div><div class="job-co">国际咨询公司 · 厦门/深圳</div><div class="job-tgs"><span class="tg strat">10年+咨询</span><span class="tg src">猎聘</span><span class="tg">数字化创新</span></div></div>
+                <div class="job-row"><div class="job-name">芯片产品规划总监</div><div class="job-sal">80-110K·15薪</div><div class="job-co">云天励飞 · 深圳</div><div class="job-tgs"><span class="tg strat">技术战略</span><span class="tg src">BOSS</span><span class="tg">大模型</span></div></div>
+                <div class="job-row"><div class="job-name">首席运营官/战略总监</div><div class="job-sal">30-60K</div><div class="job-co">匀丰资产(基金) · 北京/深圳</div><div class="job-tgs"><span class="tg strat">发展战略</span><span class="tg src">BOSS</span><span class="tg">绩效考核</span></div></div>
+                <div class="job-row"><div class="job-name">产业规划总监</div><div class="job-sal">5-10K</div><div class="job-co">文旅公司 · 南昌</div><div class="job-tgs"><span class="tg strat">SWOT/PEST</span><span class="tg src">BOSS</span><span class="tg">文旅规划</span></div></div>
+
+                <!-- Data Source Panel (collapsible) -->
+                <div id="dataSourcePanel" style="display:none;margin-top:16px;padding:16px;background:var(--surface);border-radius:12px;border:1px solid var(--border-2);">
+                    <div style="font-size:0.82rem;font-weight:700;margin-bottom:12px;color:var(--accent);">🔗 数据源 & 历史记录</div>
+                    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px;">
+                        <div style="display:flex;align-items:center;gap:6px;font-size:0.75rem;"><span style="color:var(--green);">✅</span> Google搜索聚合</div>
+                        <div style="display:flex;align-items:center;gap:6px;font-size:0.75rem;"><span style="color:var(--green);">✅</span> BOSS直聘 (12条)</div>
+                        <div style="display:flex;align-items:center;gap:6px;font-size:0.75rem;"><span style="color:var(--green);">✅</span> 猎聘网 (11条)</div>
+                        <div style="display:flex;align-items:center;gap:6px;font-size:0.75rem;"><span style="color:var(--strategy);">⏳</span> 拉勾网 (解析器就绪)</div>
+                        <div style="display:flex;align-items:center;gap:6px;font-size:0.75rem;"><span style="color:var(--strategy);">⏳</span> LinkedIn (需登录)</div>
+                        <div style="display:flex;align-items:center;gap:6px;font-size:0.75rem;"><span style="color:var(--green);">✅</span> 腾讯招聘官网</div>
+                        <div style="display:flex;align-items:center;gap:6px;font-size:0.75rem;"><span style="color:var(--green);">✅</span> 字节跳动招聘</div>
+                        <div style="display:flex;align-items:center;gap:6px;font-size:0.75rem;"><span style="color:var(--green);">✅</span> 美团招聘</div>
                     </div>
-                    <div class="listing-company">美团 · 深圳科技园</div>
-                    <div class="listing-tags">
-                        <span class="tag tag-track strategy">战略</span><span class="tag tag-src">BOSS</span>
-                        <span class="tag" style="background:var(--card-2);color:var(--text-3);border:1px solid var(--border)">OKR</span>
-                        <span class="tag" style="background:var(--card-2);color:var(--text-3);border:1px solid var(--border)">竞争分析</span>
+                    <div style="border-top:1px solid var(--border);padding-top:12px;">
+                        <div style="font-size:0.75rem;font-weight:700;margin-bottom:8px;color:var(--text-2);">📜 采集历史</div>
+                        <div style="font-size:0.72rem;color:var(--text-3);line-height:1.8;">
+                            <div style="display:flex;justify-content:space-between;"><span>2026-07-24</span><span style="color:var(--green);">v4真实数据 29岗 (全平台)</span></div>
+                            <div style="display:flex;justify-content:space-between;"><span>2026-07-23</span><span style="color:var(--text-3);">v3模拟数据 28岗 (初始版本)</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Gap Analysis -->
-        <div class="card">
-            <div class="card-head">
-                <div class="card-title">📊 Gap 分析报告 <span style="font-size:0.75rem;color:var(--text-3);font-weight:400;">vs 市场需求</span></div>
-                <button class="btn btn-sm" onclick="runGapAnalysis()">🔄 重新分析</button>
+        <!-- Right Column: Gap + Suggestions stacked -->
+        <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <!-- Gap Analysis (compact) -->
+            <div class="card">
+                <div class="card-head">
+                    <div class="card-title">📊 Gap分析 <span style="font-size:0.72rem;color:var(--text-3);">vs 市场需求</span></div>
+                    <button class="btn btn-sm" onclick="runGapAnalysis()">🔄 重析</button>
+                </div>
+                <div class="card-body" id="gapBody" style="padding:14px 16px;">
+                    <div class="gap-track" style="margin-bottom:12px;">
+                        <div class="gap-header">
+                            <div class="gap-name">🎯 项目经理</div>
+                            <div class="gap-score score-high">92%</div>
+                        </div>
+                        <div class="gap-bar-bg"><div class="gap-bar" style="width:92%;background:linear-gradient(90deg,#818cf8,#6366f1);"></div></div>
+                        <div class="gap-chips" style="flex-wrap:wrap;">
+                            <span class="chip chip-strong" style="font-size:0.62rem;padding:1px 6px;">AI交付 ✓</span>
+                            <span class="chip chip-strong" style="font-size:0.62rem;padding:1px 6px;">合规 ✓</span>
+                            <span class="chip chip-strong" style="font-size:0.62rem;padding:1px 6px;">PMP ✓</span>
+                            <span class="chip chip-need" style="font-size:0.62rem;padding:1px 6px;">Agent</span>
+                        </div>
+                    </div>
+                    <div class="gap-track" style="margin-bottom:12px;">
+                        <div class="gap-header">
+                            <div class="gap-name">📱 产品经理</div>
+                            <div class="gap-score score-high">85%</div>
+                        </div>
+                        <div class="gap-bar-bg"><div class="gap-bar" style="width:85%;background:linear-gradient(90deg,#c084fc,#a855f7);"></div></div>
+                        <div class="gap-chips" style="flex-wrap:wrap;">
+                            <span class="chip chip-strong" style="font-size:0.62rem;padding:1px 6px;">AI规划 ✓</span>
+                            <span class="chip chip-strong" style="font-size:0.62rem;padding:1px 6px;">迭代 ✓</span>
+                            <span class="chip chip-need" style="font-size:0.62rem;padding:1px 6px;">多模态</span>
+                            <span class="chip chip-gap" style="font-size:0.62rem;padding:1px 6px;">Agent设计</span>
+                        </div>
+                    </div>
+                    <div class="gap-track" style="margin-bottom:12px;">
+                        <div class="gap-header">
+                            <div class="gap-name">📊 商业分析</div>
+                            <div class="gap-score score-mid">70%</div>
+                        </div>
+                        <div class="gap-bar-bg"><div class="gap-bar" style="width:70%;background:linear-gradient(90deg,#22d3ee,#0891b2);"></div></div>
+                        <div class="gap-chips" style="flex-wrap:wrap;">
+                            <span class="chip chip-strong" style="font-size:0.62rem;padding:1px 6px;">效能度量 ✓</span>
+                            <span class="chip chip-need" style="font-size:0.62rem;padding:1px 6px;">SQL高级</span>
+                            <span class="chip chip-gap" style="font-size:0.62rem;padding:1px 6px;">BI工具</span>
+                            <span class="chip chip-gap" style="font-size:0.62rem;padding:1px 6px;">财务建模</span>
+                        </div>
+                    </div>
+                    <div class="gap-track" style="margin-bottom:0;">
+                        <div class="gap-header">
+                            <div class="gap-name">🏛️ 战略规划</div>
+                            <div class="gap-score score-high">78%</div>
+                        </div>
+                        <div class="gap-bar-bg"><div class="gap-bar" style="width:78%;background:linear-gradient(90deg,#fbbf24,#f59e0b);"></div></div>
+                        <div class="gap-chips" style="flex-wrap:wrap;">
+                            <span class="chip chip-strong" style="font-size:0.62rem;padding:1px 6px;">OKR ✓</span>
+                            <span class="chip chip-strong" style="font-size:0.62rem;padding:1px 6px;">解码 ✓</span>
+                            <span class="chip chip-need" style="font-size:0.62rem;padding:1px 6px;">PEST</span>
+                            <span class="chip chip-gap" style="font-size:0.62rem;padding:1px 6px;">竞对研究</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body" id="gapBody">
 
-                <!-- PM -->
-                <div class="gap-track">
-                    <div class="gap-header">
-                        <div class="gap-name">🎯 项目经理 <span style="font-size:0.72rem;color:var(--text-3);font-weight:400;">深圳</span></div>
-                        <div class="gap-score score-high">强匹配 92%</div>
+            <!-- Evolution Suggestions (compact, side by side with Gap) -->
+            <div class="card" style="flex:1;">
+                <div class="card-head">
+                    <div class="card-title">💡 本周进化建议 <span style="font-size:0.72rem;color:var(--text-3);">基于最新Gap</span></div>
+                </div>
+                <div class="card-body" style="padding:14px 16px;display:flex;flex-direction:column;gap:10px;">
+                    <div style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:var(--surface);border-radius:10px;border-left:3px solid var(--rose);">
+                        <div style="min-width:22px;height:22px;border-radius:50%;background:var(--rose-g);color:var(--rose);font-size:0.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+                        <div><div style="font-size:0.8rem;color:var(--text);">BA方向补充 <strong style="color:var(--ba);">SQL JOIN / 窗口函数</strong> + <strong style="color:var(--ba);">PowerBI/Tableau</strong></div><div style="font-size:0.68rem;color:var(--text-3);margin-top:2px;">📊 商业分析 · 高优缺口</div></div>
                     </div>
-                    <div class="gap-bar-bg"><div class="gap-bar" style="width:92%;background:linear-gradient(90deg,#818cf8,#6366f1);"></div></div>
-                    <div class="gap-chips">
-                        <span class="chip chip-strong">AI项目交付 ✓</span>
-                        <span class="chip chip-strong">跨境合规 ✓</span>
-                        <span class="chip chip-strong">Scrum/SAFe ✓</span>
-                        <span class="chip chip-strong">PMP ✓</span>
-                        <span class="chip chip-need">Agent经验</span>
+                    <div style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:var(--surface);border-radius:10px;border-left:3px solid var(--strategy);">
+                        <div style="min-width:22px;height:22px;border-radius:50%;background:var(--strategy-g);color:var(--strategy);font-size:0.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+                        <div><div style="font-size:0.8rem;color:var(--text);">所有方向强化 <strong style="color:var(--accent);">Agent工程化</strong> 实践案例</div><div style="font-size:0.68rem;color:var(--text-3);margin-top:2px;">🎯 PM · 📱 产品 · 中优缺口</div></div>
+                    </div>
+                    <div style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:var(--surface);border-radius:10px;border-left:3px solid var(--product);">
+                        <div style="min-width:22px;height:22px;border-radius:50%;background:rgba(192,132,252,0.12);color:var(--product);font-size:0.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+                        <div><div style="font-size:0.8rem;color:var(--text);">战略方向增加 <strong style="color:var(--strategy);">PEST / 五力模型</strong> 方法论关键词</div><div style="font-size:0.68rem;color:var(--text-3);margin-top:2px;">🏛️ 战略规划 · 中优缺口</div></div>
+                    </div>
+                    <div style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:var(--surface);border-radius:10px;border-left:3px solid var(--accent);">
+                        <div style="min-width:22px;height:22px;border-radius:50%;background:var(--accent-g);color:var(--accent);font-size:0.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
+                        <div><div style="font-size:0.8rem;color:var(--text);">PM方向将 <strong style="color:var(--pm);">Agent经验</strong> 描述调整为更具体的落地场景</div><div style="font-size:0.68rem;color:var(--text-3);margin-top:2px;">🎯 项目经理 · 低优缺口</div></div>
                     </div>
                 </div>
-
-                <!-- Product -->
-                <div class="gap-track">
-                    <div class="gap-header">
-                        <div class="gap-name">📱 产品经理 <span style="font-size:0.72rem;color:var(--text-3);font-weight:400;">深圳</span></div>
-                        <div class="gap-score score-high">强匹配 85%</div>
-                    </div>
-                    <div class="gap-bar-bg"><div class="gap-bar" style="width:85%;background:linear-gradient(90deg,#c084fc,#a855f7);"></div></div>
-                    <div class="gap-chips">
-                        <span class="chip chip-strong">AI产品规划 ✓</span>
-                        <span class="chip chip-strong">数据驱动迭代 ✓</span>
-                        <span class="chip chip-strong">灰度发布 ✓</span>
-                        <span class="chip chip-need">多模态产品</span>
-                        <span class="chip chip-gap">Agent设计</span>
-                    </div>
-                </div>
-
-                <!-- BA -->
-                <div class="gap-track">
-                    <div class="gap-header">
-                        <div class="gap-name">📊 商业分析 <span style="font-size:0.72rem;color:var(--text-3);font-weight:400;">深圳</span></div>
-                        <div class="gap-score score-mid">中匹配 70%</div>
-                    </div>
-                    <div class="gap-bar-bg"><div class="gap-bar" style="width:70%;background:linear-gradient(90deg,#22d3ee,#0891b2);"></div></div>
-                    <div class="gap-chips">
-                        <span class="chip chip-strong">研发效能度量 ✓</span>
-                        <span class="chip chip-strong">数据驱动诊断 ✓</span>
-                        <span class="chip chip-strong">ROI评估 ✓</span>
-                        <span class="chip chip-need">SQL高级</span>
-                        <span class="chip chip-gap">BI工具</span>
-                        <span class="chip chip-gap">财务建模</span>
-                    </div>
-                </div>
-
-                <!-- Strategy -->
-                <div class="gap-track">
-                    <div class="gap-header">
-                        <div class="gap-name">🏛️ 战略规划 <span style="font-size:0.72rem;color:var(--text-3);font-weight:400;">深圳</span></div>
-                        <div class="gap-score score-high">较强 78%</div>
-                    </div>
-                    <div class="gap-bar-bg"><div class="gap-bar" style="width:78%;background:linear-gradient(90deg,#fbbf24,#f59e0b);"></div></div>
-                    <div class="gap-chips">
-                        <span class="chip chip-strong">OKR运营 ✓</span>
-                        <span class="chip chip-strong">战略解码 ✓</span>
-                        <span class="chip chip-strong">跨部门治理 ✓</span>
-                        <span class="chip chip-need">PEST分析</span>
-                        <span class="chip chip-gap">竞争格局研究</span>
-                    </div>
-                </div>
-
             </div>
+
         </div>
     </div>
 
-    <!-- Suggestions -->
-    <div class="card" style="margin-bottom:16px;" id="suggestionsSection">
-        <div class="card-head">
-            <div class="card-title">💡 本周进化建议 <span style="font-size:0.75rem;color:var(--text-3);font-weight:400;">基于最新Gap分析</span></div>
-        </div>
-        <div class="card-body" style="padding-top:0;">
-            <div class="suggestion">
-                <div class="suggestion-num">1</div>
-                <div>
-                    <div class="suggestion-text">BA方向简历补充 <strong>SQL JOIN / 窗口函数</strong> 实战描述，增加 <strong>PowerBI / Tableau</strong> 使用经验（市场高频需求）</div>
-                    <div class="suggestion-track">→ 影响方向：📊 商业分析 | 缺口评级：高</div>
-                </div>
-            </div>
-            <div class="suggestion">
-                <div class="suggestion-num">2</div>
-                <div>
-                    <div class="suggestion-text">所有方向简历补充 <strong>Agent 工程化</strong> 相关实践案例（Claude Code / Codex / Agent自动化），强化 AI 项目经理标签</div>
-                    <div class="suggestion-track">→ 影响方向：🎯 PM · 📱 产品经理 | 缺口评级：中</div>
-                </div>
-            </div>
-            <div class="suggestion">
-                <div class="suggestion-num">3</div>
-                <div>
-                    <div class="suggestion-text">战略方向简历增加 <strong>PEST 分析 / 五力模型</strong> 方法论关键词，增强战略规划定位</div>
-                    <div class="suggestion-track">→ 影响方向：🏛️ 战略规划 | 缺口评级：中</div>
-                </div>
-            </div>
-            <div class="suggestion">
-                <div class="suggestion-num">4</div>
-                <div>
-                    <div class="suggestion-text">项目经理简历将 <strong>Agent 经验</strong> 描述调整为更具体的落地场景（如：Claude Code辅助研发流程自动化）</div>
-                    <div class="suggestion-track">→ 影响方向：🎯 项目经理 | 缺口评级：低</div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Suggestions section removed (merged into right column above) -->
 
     <!-- Resume Tracks + Trends -->
     <div class="grid-2" style="margin-bottom:16px;">
@@ -774,6 +822,75 @@
                     <span class="hot-tag" style="background:var(--card-2);color:var(--text-2);border-color:var(--border)">PEST分析</span>
                     <span class="hot-tag" style="background:var(--card-2);color:var(--text-2);border-color:var(--border)">BI工具</span>
                     <span class="hot-tag" style="background:var(--card-2);color:var(--text-2);border-color:var(--border)">英语口语</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Sources Panel -->
+        <div class="card" style="margin-top:16px;">
+            <div class="card-head">
+                <div class="card-title">🔌 数据源监控</div>
+                <div class="ds-stat-badge">📊 本周 29 岗位 / 4 方向</div>
+            </div>
+            <div class="card-body ds-panel">
+                <div class="ds-grid">
+                    <div class="ds-item">
+                        <span class="ds-icon">🔍</span>
+                        <span class="ds-name">Google 搜索聚合</span>
+                        <span class="ds-status ok">✅</span>
+                    </div>
+                    <div class="ds-item">
+                        <span class="ds-icon">💼</span>
+                        <span class="ds-name">BOSS直聘</span>
+                        <span class="ds-status ok">✅ 12条</span>
+                    </div>
+                    <div class="ds-item">
+                        <span class="ds-icon">🎯</span>
+                        <span class="ds-name">猎聘网</span>
+                        <span class="ds-status ok">✅ 11条</span>
+                    </div>
+                    <div class="ds-item">
+                        <span class="ds-icon">🚀</span>
+                        <span class="ds-name">拉勾网</span>
+                        <span class="ds-status wait">⏳ 解析器就绪</span>
+                    </div>
+                    <div class="ds-item">
+                        <span class="ds-icon">💼</span>
+                        <span class="ds-name">LinkedIn</span>
+                        <span class="ds-status wait">⏳ 需登录</span>
+                    </div>
+                    <div class="ds-item">
+                        <span class="ds-icon">🏢</span>
+                        <span class="ds-name">腾讯招聘官网</span>
+                        <span class="ds-status ok">✅</span>
+                    </div>
+                    <div class="ds-item">
+                        <span class="ds-icon">🏢</span>
+                        <span class="ds-name">字节跳动招聘</span>
+                        <span class="ds-status ok">✅</span>
+                    </div>
+                    <div class="ds-item">
+                        <span class="ds-icon">🏢</span>
+                        <span class="ds-name">美团招聘</span>
+                        <span class="ds-status ok">✅</span>
+                    </div>
+                </div>
+                <div class="ds-history">
+                    <div class="section-label" style="margin-bottom:8px;">历史采集记录</div>
+                    <div class="ds-hist-item">
+                        <div>
+                            <span style="font-size:0.8rem;font-weight:600;">2026-07-24</span>
+                            <span style="font-size:0.72rem;color:var(--text-3);margin-left:8px;">v4 全平台采集</span>
+                        </div>
+                        <span class="ds-hist-count" style="color:var(--green);">29 条</span>
+                    </div>
+                    <div class="ds-hist-item">
+                        <div>
+                            <span style="font-size:0.8rem;font-weight:600;">2026-07-23</span>
+                            <span style="font-size:0.72rem;color:var(--text-3);margin-left:8px;">初始版本（模拟数据）</span>
+                        </div>
+                        <span class="ds-hist-count" style="color:var(--text-2);">28 条</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -946,88 +1063,331 @@
         alert('正在渲染网站...\n将更新 public/index.html 并推送到 GitHub');
     }
 
-    // Resume preview modal
+    // Resume preview modal — full visual resume cards
     const trackData = {
         pm: {
             title: '🎯 项目经理方向简历',
-            file: 'data/resumes/resume_pm.md',
-            highlights: 'AI项目交付率 95%+ · 出海合规零阻断 · 团队效率提升 40% · 延期风险降低 30%',
-            updated: '2026-07-23'
+            accentColor: 'var(--pm)',
+            accentBg: 'var(--pm-g)',
+            avatarBg: 'linear-gradient(135deg, #818cf8, #6366f1)',
+            avatarShadow: 'rgba(129,140,248,0.35)',
+            target: '高级项目经理 / AI项目经理 / PMO',
+            summary: '9年+项目交付经验，横跨游戏、音频社交、AI出海三大赛道。擅长AI项目全生命周期管理、跨境合规治理（GDPR/LGPD）及敏捷规模化落地。持有PMP·ACP·NPDP三大认证，具备SAFe大规模敏捷实战能力，主导项目累计交付价值超数千万级别。',
+            metrics: [
+                { val: '95%+', lbl: 'AI项目按期交付率', color: 'var(--green)' },
+                { val: '30%↓', lbl: '延期风险降低', color: 'var(--green)' },
+                { val: '40%↑', lbl: '团队效率提升', color: 'var(--green)' },
+                { val: '92%+', lbl: '版本准时发布率', color: 'var(--green)' }
+            ],
+            jobs: [
+                {
+                    company: '美图集团', companyColor: 'var(--pm)',
+                    title: '高级项目经理',
+                    period: '2025.07 – 2026.04',
+                    bullets: [
+                        '主导AI影像产品出海美国&巴西专项全生命周期管理，按期交付率95%+',
+                        '前置识别GDPR/LGPD合规风险，实现跨境合规零阻断，业务零损失',
+                        '引入Claude Code/Codex AI辅助研发工具，团队效率提升40%，周期缩短20%',
+                        '延期风险降低30%，建立量化效能度量体系'
+                    ]
+                },
+                {
+                    company: '荔枝集团', companyColor: 'var(--product)',
+                    title: '高级项目经理',
+                    period: '2023.04 – 2025.06',
+                    bullets: [
+                        '统筹音频社交产品多项目并行交付，版本准时率92%+',
+                        '主导研发效能提升专项，团队人效提升40%，交付周期缩短20%',
+                        '建立敏捷转型规范，推动Scrum规模化落地（SAFe）'
+                    ]
+                },
+                {
+                    company: 'IGG', companyColor: 'var(--strategy)',
+                    title: '资深项目经理 / Scrum Master',
+                    period: '2021.08 – 2022.11',
+                    bullets: [
+                        '负责游戏产品敏捷交付，项目准时率提升至90%+',
+                        '引入看板与持续交付实践，推动团队工程效能持续改进'
+                    ]
+                }
+            ],
+            skills: [
+                { label: 'PMP · ACP · NPDP', style: 'background:var(--accent-g);color:var(--accent);border-color:var(--accent-g2)' },
+                { label: 'Scrum · SAFe · 看板', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: 'AI项目交付', style: 'background:var(--green-g);color:var(--green);border-color:rgba(52,211,153,0.25)' },
+                { label: '跨境合规GDPR/LGPD', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: 'Jira · Confluence', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: 'Claude Code · Codex', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: 'DevOps · 持续交付', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: '飞书 · MS Project', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' }
+            ],
+            edu: { school: '中山大学', degree: '数字经济 硕士在读', detail: '2025.09 – 2028.09 · 项目管理方向' }
         },
         product: {
             title: '📱 产品经理方向简历',
-            file: 'data/resumes/resume_product.md',
-            highlights: 'AI产品规划实战 · 用户留存提升 20% · 内容点击率提升 15% · 版本准时发布率 92%+',
-            updated: '2026-07-23'
+            accentColor: 'var(--product)',
+            accentBg: 'var(--product-g)',
+            avatarBg: 'linear-gradient(135deg, #c084fc, #a855f7)',
+            avatarShadow: 'rgba(192,132,252,0.35)',
+            target: 'AI产品经理 / 数字化产品经理 / C端产品经理',
+            summary: '8年+产品经验，从0到1主导过多款海外游戏产品及AI影像产品的规划与迭代。擅长AI产品化落地、数据驱动决策、用户增长策略及灰度发布。具备PMP·NPDP认证，能在敏捷团队中高效协同，推动产品快速验证与持续迭代。',
+            metrics: [
+                { val: '20%↑', lbl: '用户留存提升', color: 'var(--product)' },
+                { val: '15%↑', lbl: '内容点击率提升', color: 'var(--product)' },
+                { val: '92%+', lbl: '版本准时发布率', color: 'var(--product)' },
+                { val: '40%+', lbl: '海外营收增长', color: 'var(--green)' }
+            ],
+            jobs: [
+                {
+                    company: '点触科技', companyColor: 'var(--product)',
+                    title: '高级产品经理',
+                    period: '2015.09 – 2021.04',
+                    bullets: [
+                        '从0到1主导海外游戏产品策划与运营，海外营收增长40%+',
+                        '深度参与产品全生命周期管理，制定产品Roadmap与迭代策略',
+                        '数据驱动决策：A/B测试、用户画像分析、ROI评估',
+                        '建立海外用户增长体系，策划多版本联动活动'
+                    ]
+                },
+                {
+                    company: '美图集团', companyColor: 'var(--pm)',
+                    title: '高级项目经理（产品协作）',
+                    period: '2025.07 – 2026.04',
+                    bullets: [
+                        '协同产品团队规划AI影像产品出海路径，覆盖美国&巴西市场',
+                        '主导灰度发布策略，降低版本风险，发布成功率92%+',
+                        '推动数据埋点规范化，建立核心指标监控体系'
+                    ]
+                },
+                {
+                    company: '荔枝集团', companyColor: 'var(--ba)',
+                    title: '高级项目经理（产品视角）',
+                    period: '2023.04 – 2025.06',
+                    bullets: [
+                        '参与音频社交产品功能规划，以用户留存为核心优化迭代',
+                        '主导数据分析驱动产品决策，用户留存提升20%'
+                    ]
+                }
+            ],
+            skills: [
+                { label: 'NPDP · PMP', style: 'background:var(--accent-g);color:var(--accent);border-color:var(--accent-g2)' },
+                { label: 'AI产品规划', style: 'background:var(--product-g);color:var(--product);border-color:rgba(192,132,252,0.25)' },
+                { label: '数据驱动迭代', style: 'background:var(--green-g);color:var(--green);border-color:rgba(52,211,153,0.25)' },
+                { label: 'A/B 测试 · 灰度发布', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: '用户增长策略', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: 'Figma · 原型设计', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: 'SQL · 数据分析', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: '英语商务流利', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' }
+            ],
+            edu: { school: '中山大学', degree: '数字经济 硕士在读', detail: '2025.09 – 2028.09 · 产品创新方向' }
         },
         ba: {
             title: '📊 商业分析方向简历',
-            file: 'data/resumes/resume_ba.md',
-            highlights: '研发效能度量体系建设 · 项目延期风险降低 30% · 交付周期缩短 20% · AI辅助数据分析',
-            updated: '2026-07-23'
+            accentColor: 'var(--ba)',
+            accentBg: 'var(--ba-g)',
+            avatarBg: 'linear-gradient(135deg, #22d3ee, #0891b2)',
+            avatarShadow: 'rgba(34,211,238,0.35)',
+            target: '商业分析师 / 研发效能分析师 / 数据分析师',
+            summary: '9年+跨职能经验，深耕研发效能度量与数据驱动决策。擅长搭建效能指标体系、ROI评估、敏捷成熟度诊断，及AI辅助数据分析。具备项目管理+数据分析+商业洞察的复合能力，能直接支撑高管经营决策与战略规划。',
+            metrics: [
+                { val: '30%↓', lbl: '项目延期风险降低', color: 'var(--green)' },
+                { val: '20%↓', lbl: '交付周期缩短', color: 'var(--green)' },
+                { val: '40%↑', lbl: '跨部门效率提升', color: 'var(--green)' },
+                { val: '95%+', lbl: '数据报告覆盖率', color: 'var(--ba)' }
+            ],
+            jobs: [
+                {
+                    company: '美图集团', companyColor: 'var(--pm)',
+                    title: '高级项目经理（效能分析视角）',
+                    period: '2025.07 – 2026.04',
+                    bullets: [
+                        '搭建AI项目研发效能度量体系，量化指标覆盖率95%+',
+                        '建立ROI评估模型，支撑项目立项决策与资源分配',
+                        '引入AI辅助数据分析工具，诊断交付瓶颈，周期缩短20%'
+                    ]
+                },
+                {
+                    company: '荔枝集团', companyColor: 'var(--product)',
+                    title: '高级项目经理（数字化治理）',
+                    period: '2023.04 – 2025.06',
+                    bullets: [
+                        '主导数字化治理专项，跨部门效率提升40%',
+                        '搭建数据驱动诊断体系，量化研发过程风险',
+                        '建立财务经营分析报表，支持高管周/月经营决策'
+                    ]
+                },
+                {
+                    company: '点触科技', companyColor: 'var(--strategy)',
+                    title: '高级产品经理（数据分析视角）',
+                    period: '2015.09 – 2021.04',
+                    bullets: [
+                        '通过ROI评估驱动产品投入决策，优化资源分配',
+                        '构建核心业务指标监控体系，数据驱动精细化运营',
+                        '定期输出经营分析报告，支撑高层战略决策'
+                    ]
+                }
+            ],
+            skills: [
+                { label: 'PMP · 软考高项', style: 'background:var(--accent-g);color:var(--accent);border-color:var(--accent-g2)' },
+                { label: '研发效能度量', style: 'background:var(--ba-g);color:var(--ba);border-color:rgba(34,211,238,0.25)' },
+                { label: 'Python · SQL基础', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: 'Excel 高级', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: 'ROI评估建模', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: '财务报表分析', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: 'AI辅助数据分析', style: 'background:var(--green-g);color:var(--green);border-color:rgba(52,211,153,0.25)' },
+                { label: '飞书BI · 自研平台', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' }
+            ],
+            edu: { school: '中山大学', degree: '数字经济 硕士在读', detail: '2025.09 – 2028.09 · 数据分析方向' }
         },
         strategy: {
             title: '🏛️ 战略规划方向简历',
-            file: 'data/resumes/resume_strategy.md',
-            highlights: 'OKR运营覆盖3家公司 · 战略落地周期缩短 20%+ · 跨部门效率提升 40% · 高管汇报实战',
-            updated: '2026-07-23'
+            accentColor: 'var(--strategy)',
+            accentBg: 'var(--strategy-g)',
+            avatarBg: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+            avatarShadow: 'rgba(251,191,36,0.35)',
+            target: '战略规划 / 项目总监 / OKR运营 / 经营分析',
+            summary: '9年+跨公司战略与治理经验，OKR运营覆盖3家不同规模公司，具备从战略解码到落地的完整链路能力。擅长跨部门协调、高管汇报、竞争格局分析（PEST/五力模型），及经营目标治理。具备将模糊战略转化为清晰执行路径的实战能力。',
+            metrics: [
+                { val: '3家', lbl: 'OKR运营覆盖公司', color: 'var(--strategy)' },
+                { val: '20%+↓', lbl: '战略落地周期缩短', color: 'var(--green)' },
+                { val: '40%↑', lbl: '跨部门效率提升', color: 'var(--green)' },
+                { val: '92%+', lbl: 'OKR对齐率', color: 'var(--strategy)' }
+            ],
+            jobs: [
+                {
+                    company: '美图集团', companyColor: 'var(--pm)',
+                    title: '高级项目经理（战略协同）',
+                    period: '2025.07 – 2026.04',
+                    bullets: [
+                        '承接公司级OKR，主导AI出海专项战略解码与落地',
+                        '建立出海业务OKR对齐机制，对齐率92%+',
+                        '定期向高管汇报战略进展，推动资源跨部门协同'
+                    ]
+                },
+                {
+                    company: '荔枝集团', companyColor: 'var(--product)',
+                    title: '高级项目经理（数字化治理）',
+                    period: '2023.04 – 2025.06',
+                    bullets: [
+                        '主导公司级OKR运营体系，覆盖产品/研发/运营三大部门',
+                        '建立经营分析月报机制，支撑高管战略决策',
+                        '推动跨部门战略对齐，落地周期缩短20%+',
+                        '主导组织级项目集治理，提升战略执行透明度'
+                    ]
+                },
+                {
+                    company: 'IGG / 点触科技', companyColor: 'var(--strategy)',
+                    title: '项目经理 / 产品经理',
+                    period: '2015.09 – 2022.11',
+                    bullets: [
+                        '早期职业阶段积累了游戏行业战略思维与产品全局观',
+                        '通过OKR驱动产品迭代，量化目标管理能力'
+                    ]
+                }
+            ],
+            skills: [
+                { label: 'OKR 运营', style: 'background:var(--strategy-g);color:var(--strategy);border-color:rgba(251,191,36,0.25)' },
+                { label: '战略解码', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: 'PEST · 五力模型', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: 'PMP · 软考高项', style: 'background:var(--accent-g);color:var(--accent);border-color:var(--accent-g2)' },
+                { label: '经营分析', style: 'background:var(--green-g);color:var(--green);border-color:rgba(52,211,153,0.25)' },
+                { label: '高管汇报', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: '跨部门治理', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: '英语商务流利', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' }
+            ],
+            edu: { school: '中山大学', degree: '数字经济 硕士在读', detail: '2025.09 – 2028.09 · 战略管理方向' }
         }
     };
 
     function previewTrack(track) {
         const d = trackData[track];
-        document.getElementById('modalTitle').textContent = d.title;
+        document.getElementById('modalTitle').innerHTML = `<span style="color:${d.accentColor}">${d.title.replace(/^\S+\s/, '')}</span>`;
         document.getElementById('modalBody').innerHTML = `
-            <div style="font-size:0.82rem;color:var(--text-2);margin-bottom:16px;">
-                文件路径：<code style="background:var(--card-2);padding:3px 10px;border-radius:5px;font-family:'JetBrains Mono',monospace;font-size:0.78rem;">${d.file}</code><br>
-                更新时间：${d.updated}
-            </div>
-            <div class="resume-content">
-                <div class="resume-section">
-                    <div class="resume-section-title">核心成果</div>
-                    <div style="font-size:0.85rem;color:var(--green);font-weight:600;">${d.highlights}</div>
-                </div>
-                <div class="resume-section">
-                    <div class="resume-section-title">工作经历</div>
-                    <div class="resume-job">
-                        <div class="resume-job-header">
-                            <div class="resume-job-title">高级项目经理 · 美图集团</div>
-                            <div class="resume-job-period">2025.07 – 2026.04</div>
-                        </div>
-                        <div class="resume-job-company">AI项目集、出海专项与研发交付</div>
-                        <ul class="resume-bullets">
-                            <li>主导AI影像产品面向美国及巴西的出海专项全生命周期管理，按期交付率95%+</li>
-                            <li>前置识别GDPR/LGPD合规风险，跨境合规零阻断</li>
-                            <li>延期风险降30%，团队效率升35%</li>
-                        </ul>
-                    </div>
-                    <div class="resume-job">
-                        <div class="resume-job-header">
-                            <div class="resume-job-title">高级项目经理 · 荔枝集团</div>
-                            <div class="resume-job-period">2023.04 – 2025.06</div>
-                        </div>
-                        <div class="resume-job-company">音频社交产品与数字化治理</div>
-                        <ul class="resume-bullets">
-                            <li>统筹音频社交产品多项目并行交付，版本准时率92%+</li>
-                            <li>团队效率提升40%，周期缩短20%</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="resume-section">
-                    <div class="resume-section-title">技能</div>
-                    <div style="display:flex;flex-wrap:wrap;gap:6px;">
-                        <span style="background:var(--accent-g);color:var(--accent);border:1px solid var(--accent-g2);border-radius:6px;padding:4px 12px;font-size:0.8rem;font-family:'JetBrains Mono',monospace">PMP · ACP · NPDP</span>
-                        <span style="background:var(--card-2);color:var(--text-2);border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-size:0.8rem;font-family:'JetBrains Mono',monospace">Scrum · SAFe · DevOps</span>
-                        <span style="background:var(--card-2);color:var(--text-2);border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-size:0.8rem;font-family:'JetBrains Mono',monospace">Jira · 飞书 · MS Project</span>
-                        <span style="background:var(--card-2);color:var(--text-2);border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-size:0.8rem;font-family:'JetBrains Mono',monospace">Claude Code · Codex · Agent</span>
-                    </div>
-                </div>
-            </div>
-            <div class="resume-actions">
-                <button class="btn primary" onclick="alert('PDF导出功能开发中...')">📄 导出PDF</button>
-                <button class="btn" onclick="alert('简历编辑功能开发中...')">✏️ 编辑内容</button>
-                <button class="btn" onclick="window.open('https://annaok123.github.io/Anna-blog/','_blank')">👁 查看个人博客</button>
-            </div>`;
+<div class="resume-card">
+  <!-- Top info bar + avatar -->
+  <div class="resume-card-head">
+    <div class="resume-avatar" style="background:${d.avatarBg};box-shadow:0 4px 20px ${d.avatarShadow};">ZN</div>
+    <div class="resume-identity">
+      <div class="resume-name">周娜娜 · Anna</div>
+      <div class="resume-target" style="color:${d.accentColor}">${d.target}</div>
+      <div class="resume-contacts">
+        <span class="resume-contact-item">📧 zhounanaok@163.com</span>
+        <span class="resume-contact-item">📱 185-5977-3382</span>
+        <span class="resume-contact-item">📍 深圳</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Self-evaluation -->
+  <div class="resume-section">
+    <div class="resume-section-title" style="color:${d.accentColor}">
+      <span class="st-icon">💬</span> 自我评价
+    </div>
+    <div class="resume-summary">${d.summary}</div>
+  </div>
+
+  <!-- Core metrics -->
+  <div class="resume-section">
+    <div class="resume-section-title" style="color:${d.accentColor}">
+      <span class="st-icon">📊</span> 核心成果
+    </div>
+    <div class="resume-metrics">
+      ${d.metrics.map(m => `<div class="resume-metric">
+        <div class="resume-metric-val" style="color:${m.color}">${m.val}</div>
+        <div class="resume-metric-lbl">${m.lbl}</div>
+      </div>`).join('')}
+    </div>
+  </div>
+
+  <!-- Work experience -->
+  <div class="resume-section">
+    <div class="resume-section-title" style="color:${d.accentColor}">
+      <span class="st-icon">💼</span> 工作经历
+    </div>
+    ${d.jobs.map(j => `
+    <div class="resume-job">
+      <div class="resume-job-header">
+        <div>
+          <div class="resume-job-title">${j.title}</div>
+          <div class="resume-company-tag" style="background:${d.accentBg};color:${d.accentColor};border:1px solid ${d.accentBg.replace('0.12', '0.3')}">${j.company}</div>
+        </div>
+        <div class="resume-job-period">${j.period}</div>
+      </div>
+      <ul class="resume-bullets">
+        ${j.bullets.map(b => `<li>${b}</li>`).join('')}
+      </ul>
+    </div>`).join('')}
+  </div>
+
+  <!-- Skills -->
+  <div class="resume-section">
+    <div class="resume-section-title" style="color:${d.accentColor}">
+      <span class="st-icon">🛠️</span> 核心技能
+    </div>
+    <div class="resume-skills">
+      ${d.skills.map(s => `<span class="resume-skill-tag" style="${s.style}">${s.label}</span>`).join('')}
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="resume-section">
+    <div class="resume-section-title" style="color:${d.accentColor}">
+      <span class="st-icon">🎓</span> 教育背景
+    </div>
+    <div class="resume-education">
+      <div class="resume-edu-icon">🎓</div>
+      <div class="resume-edu-info">
+        <div class="resume-edu-name">${d.edu.school}</div>
+        <div class="resume-edu-detail">${d.edu.degree} · ${d.edu.detail}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="resume-actions">
+  <button class="btn primary" onclick="window.print()">📄 导出PDF</button>
+  <button class="btn" onclick="alert('简历编辑功能已记录，请在本地 data/resumes/ 目录下编辑对应简历文件后重新渲染。');">✏️ 编辑内容</button>
+  <button class="btn" onclick="window.open('https://annaok123.github.io/Anna-blog/','_blank')">👁 查看个人博客</button>
+</div>`;
         document.getElementById('previewModal').classList.add('show');
     }
 
@@ -1042,6 +1402,25 @@
         if (e.key === 'Escape') closeModal();
     });
 </script>
+
+<footer style="margin-top:48px;padding:32px 0 24px;border-top:1px solid var(--border);text-align:center;">
+    <div style="font-size:0.78rem;color:var(--text-3);margin-bottom:8px;">
+        本系统由 <strong style="color:var(--accent)">OpenClaw AI</strong> 驱动 · 简历进化智能体
+    </div>
+    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;font-size:0.72rem;color:var(--text-3);">
+        <span>🤖 Claude (Anthropic)</span>
+        <span>·</span>
+        <span>🔍 Web Search (Brave API)</span>
+        <span>·</span>
+        <span>🌐 GitHub Pages</span>
+        <span>·</span>
+        <span>📊 Python 数据分析引擎</span>
+    </div>
+    <div style="font-size:0.68rem;color:var(--text-3);margin-top:8px;">
+        © 2026 周娜娜 · Resume Evolver System v4.0 ·
+        <a href="https://annaok123.github.io/Anna-blog/" style="color:var(--accent);text-decoration:none;">个人博客</a>
+    </div>
+</footer>
 
 </body>
 </html>
