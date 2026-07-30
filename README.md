@@ -1,8 +1,11 @@
 # 🎯 简历进化者 — 个人简历自动化网站
 
 > 基于市场招聘需求（HC）自动进化的个人简历 + 个人网站系统
+> 以上使用QClaw工具生成
 
 ---
+## 外网预览地址：
+https://annaok123.github.io/resume-evolver-system/
 
 ## 系统架构
 
