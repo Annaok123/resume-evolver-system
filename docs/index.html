@@ -504,7 +504,7 @@
             <div class="wf-status ok">✓</div>
             <div class="wf-icon">📊</div>
             <div class="wf-name">Gap分析</div>
-            <div class="wf-sub">4方向 vs 市场</div>
+            <div class="wf-sub">5方向 vs 市场</div>
         </div>
         <div class="wf-step active" onclick="jumpTo('suggestions')">
             <div class="wf-status run">▶</div>
@@ -531,16 +531,16 @@
         <div class="kpi green">
             <div class="kpi-header">
                 <div class="kpi-icon">🔍</div>
-                <div class="kpi-pulse up">+1 新</div>
+                <div class="kpi-pulse up">+9 新</div>
             </div>
-            <div class="kpi-val">29</div>
+            <div class="kpi-val">38</div>
             <div class="kpi-lbl">本周采集有效岗位</div>
-            <div class="kpi-sub">上次: 2026-07-24 17:42</div>
+            <div class="kpi-sub">上次: 2026-08-11 14:24</div>
         </div>
         <div class="kpi">
             <div class="kpi-header">
                 <div class="kpi-icon">📝</div>
-                <div class="kpi-pulse new">4方向</div>
+                <div class="kpi-pulse new">5方向</div>
             </div>
             <div class="kpi-val">4</div>
             <div class="kpi-lbl">简历版本已生成</div>
@@ -572,7 +572,7 @@
         <!-- Market Listings (Left - wider, more jobs) -->
         <div class="card" style="grid-row: span 2;">
             <div class="card-head">
-                <div class="card-title">📋 市场岗位 <span style="font-size:0.72rem;color:var(--green);font-weight:600;">29岗 · v4真实数据</span> <span style="font-size:0.7rem;color:var(--text-3);font-weight:400;">2026-07-24</span></div>
+                <div class="card-title">📋 市场岗位 <span style="font-size:0.72rem;color:var(--green);font-weight:600;">38岗 · v5真实数据</span> <span style="font-size:0.7rem;color:var(--text-3);font-weight:400;">2026-08-11</span></div>
                 <div style="display:flex;gap:6px;">
                     <button class="btn btn-sm" onclick="runMonitor()">🔄 扫描</button>
                     <button class="btn btn-sm" onclick="document.getElementById('dataSourcePanel').style.display=document.getElementById('dataSourcePanel').style.display==='block'?'none':'block'">🔗 数据源</button>
@@ -621,6 +621,18 @@
                 <div class="job-row"><div class="job-name">首席运营官/战略总监</div><div class="job-sal">30-60K</div><div class="job-co">匀丰资产(基金) · 北京/深圳</div><div class="job-tgs"><span class="tg strat">发展战略</span><span class="tg src">BOSS</span><span class="tg">绩效考核</span></div></div>
                 <div class="job-row"><div class="job-name">产业规划总监</div><div class="job-sal">5-10K</div><div class="job-co">文旅公司 · 南昌</div><div class="job-tgs"><span class="tg strat">SWOT/PEST</span><span class="tg src">BOSS</span><span class="tg">文旅规划</span></div></div>
 
+                <!-- Investment Track (NEW) -->
+                <div class="track-divider"><span class="track-divider-label" style="color:#f59e0b;">💹 投资经理 (9)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">面议-40K</span></div>
+                <div class="job-row"><div class="job-name">FOF投资经理</div><div class="job-sal">18-25K</div><div class="job-co">国信证券资管 · 深圳福田</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">基金从业</span><span class="tg src">智联</span><span class="tg">硕士</span></div></div>
+                <div class="job-row"><div class="job-name">证券投资项目经理</div><div class="job-sal">20-40K·14薪</div><div class="job-co">某证券公司 · 深圳福田</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">固收/衍生品</span><span class="tg src">智联</span><span class="tg">3-5年</span></div></div>
+                <div class="job-row"><div class="job-name">投资经理（投资分析）</div><div class="job-sal">面议</div><div class="job-co">某创投公司 · 深圳</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">尽调/建模</span><span class="tg src">猎聘</span><span class="tg">法律/财会</span></div></div>
+                <div class="job-row"><div class="job-name">高级投资经理（前沿科技）</div><div class="job-sal">面议</div><div class="job-co">超越创投 · 深圳南山</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">VC/AI/硬科技</span><span class="tg src">猎聘</span><span class="tg">硕士·CFA</span></div></div>
+                <div class="job-row"><div class="job-name">投资经理（PE方向）</div><div class="job-sal">面议</div><div class="job-co">华强集团 · 深圳</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">PE投资</span><span class="tg src">今日招聘</span><span class="tg">CPA优先</span></div></div>
+                <div class="job-row"><div class="job-name">高级PE投资经理</div><div class="job-sal">面议</div><div class="job-co">君盛投资 · 深圳</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">3年+VC</span><span class="tg src">今日招聘</span><span class="tg">主导2个案例</span></div></div>
+                <div class="job-row"><div class="job-name">投资总监</div><div class="job-sal">15-30K</div><div class="job-co">前海信达私募 · 深圳南油</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">一级市场</span><span class="tg src">BOSS</span><span class="tg">硬科技</span></div></div>
+                <div class="job-row"><div class="job-name">投资总监</div><div class="job-sal">22-40K</div><div class="job-co">某私募基金 · 深圳南山</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">5-10年</span><span class="tg src">BOSS</span><span class="tg">一级市场</span></div></div>
+                <div class="job-row"><div class="job-name">私募股权基金经理</div><div class="job-sal">15-20K</div><div class="job-co">卓诚源邦 · 深圳</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">硬科技VC</span><span class="tg src">BOSS</span><span class="tg">高净值</span></div></div>
+
                 <!-- Data Source Panel (collapsible) -->
                 <div id="dataSourcePanel" style="display:none;margin-top:16px;padding:16px;background:var(--surface);border-radius:12px;border:1px solid var(--border-2);">
                     <div style="font-size:0.82rem;font-weight:700;margin-bottom:12px;color:var(--accent);">🔗 数据源 & 历史记录</div>
@@ -637,7 +649,8 @@
                     <div style="border-top:1px solid var(--border);padding-top:12px;">
                         <div style="font-size:0.75rem;font-weight:700;margin-bottom:8px;color:var(--text-2);">📜 采集历史</div>
                         <div style="font-size:0.72rem;color:var(--text-3);line-height:1.8;">
-                            <div style="display:flex;justify-content:space-between;"><span>2026-07-24</span><span style="color:var(--green);">v4真实数据 29岗 (全平台)</span></div>
+                            <div style="display:flex;justify-content:space-between;"><span>2026-08-11</span><span style="color:var(--green);">v5真实数据 38岗 (5方向)</span></div>
+                            <div style="display:flex;justify-content:space-between;"><span>2026-07-24</span><span style="color:var(--text-3);">v4真实数据 29岗 (4方向)</span></div>
                             <div style="display:flex;justify-content:space-between;"><span>2026-07-23</span><span style="color:var(--text-3);">v3模拟数据 28岗 (初始版本)</span></div>
                         </div>
                     </div>
@@ -707,6 +720,19 @@
                             <span class="chip chip-gap" style="font-size:0.62rem;padding:1px 6px;">竞对研究</span>
                         </div>
                     </div>
+                    <div class="gap-track" style="margin-bottom:0;">
+                        <div class="gap-header">
+                            <div class="gap-name">💹 投资经理</div>
+                            <div class="gap-score score-mid">65%</div>
+                        </div>
+                        <div class="gap-bar-bg"><div class="gap-bar" style="width:65%;background:linear-gradient(90deg,#f59e0b,#d97706);"></div></div>
+                        <div class="gap-chips" style="flex-wrap:wrap;">
+                            <span class="chip chip-strong" style="font-size:0.62rem;padding:1px 6px;">ROI评估 ✓</span>
+                            <span class="chip chip-strong" style="font-size:0.62rem;padding:1px 6px;">尽调管控 ✓</span>
+                            <span class="chip chip-need" style="font-size:0.62rem;padding:1px 6px;">财务建模</span>
+                            <span class="chip chip-gap" style="font-size:0.62rem;padding:1px 6px;">基金从业资格</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -732,6 +758,10 @@
                         <div style="min-width:22px;height:22px;border-radius:50%;background:var(--accent-g);color:var(--accent);font-size:0.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
                         <div><div style="font-size:0.8rem;color:var(--text);">PM方向将 <strong style="color:var(--pm);">Agent经验</strong> 描述调整为更具体的落地场景</div><div style="font-size:0.68rem;color:var(--text-3);margin-top:2px;">🎯 项目经理 · 低优缺口</div></div>
                     </div>
+                    <div style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:var(--surface);border-radius:10px;border-left:3px solid #f59e0b;">
+                        <div style="min-width:22px;height:22px;border-radius:50%;background:rgba(245,158,11,0.12);color:#f59e0b;font-size:0.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div>
+                        <div><div style="font-size:0.8rem;color:var(--text);">投资经理方向补充 <strong style="color:#f59e0b;">基金从业资格证</strong> + 基础财务建模技能</div><div style="font-size:0.68rem;color:var(--text-3);margin-top:2px;">💹 投资经理 · 🆕 新增方向</div></div>
+                    </div>
                 </div>
             </div>
 
@@ -745,7 +775,7 @@
 
         <!-- Resume Status -->
         <div>
-            <div class="section-label" style="margin-bottom:12px;">📝 四方向简历状态</div>
+            <div class="section-label" style="margin-bottom:12px;">📝 五方向简历状态</div>
             <div class="track-cards">
                 <div class="t-card" onclick="previewTrack('pm')">
                     <div class="t-card-icon">🎯</div>
@@ -781,6 +811,15 @@
                     <div class="t-card-match">匹配度 <strong style="color:var(--strategy)">78%</strong></div>
                     <div class="t-match-bar"><div class="t-match-fill" style="width:78%;background:var(--strategy);"></div></div>
                     <div class="t-card-date">⏳ 待进化</div>
+                    <button class="btn t-btn">👁 预览 / 下载</button>
+                </div>
+                <div class="t-card" onclick="previewTrack('investment')" style="border-color:rgba(245,158,11,0.2);">
+                    <div class="t-card-icon">💹</div>
+                    <div class="t-card-name">投资经理</div>
+                    <div class="t-card-role">PE/VC · 科技方向</div>
+                    <div class="t-card-match">匹配度 <strong style="color:#f59e0b">65%</strong></div>
+                    <div class="t-match-bar"><div class="t-match-fill" style="width:65%;background:#f59e0b;"></div></div>
+                    <div class="t-card-date">🆕 新增 2026-08-11</div>
                     <button class="btn t-btn">👁 预览 / 下载</button>
                 </div>
             </div>
@@ -830,7 +869,7 @@
         <div class="card" style="margin-top:16px;">
             <div class="card-head">
                 <div class="card-title">🔌 数据源监控</div>
-                <div class="ds-stat-badge">📊 本周 29 岗位 / 4 方向</div>
+                <div class="ds-stat-badge">📊 本周 38 岗位 / 5 方向</div>
             </div>
             <div class="card-body ds-panel">
                 <div class="ds-grid">
@@ -1296,6 +1335,64 @@
                 { label: '英语商务流利', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' }
             ],
             edu: { school: '中山大学', degree: '数字经济 硕士在读', detail: '2025.09 – 2028.09 · 战略管理方向' }
+        },
+        investment: {
+            title: '💹 投资经理方向简历',
+            accentColor: '#f59e0b',
+            accentBg: 'rgba(245,158,11,0.12)',
+            avatarBg: 'linear-gradient(135deg, #f59e0b, #d97706)',
+            avatarShadow: 'rgba(245,158,11,0.35)',
+            target: 'PE/VC投资经理 · 科技方向 · 深圳',
+            summary: '10年+互联网与AI产品交付经验，具备从项目管理视角切入股权投资的能力。擅长ROI量化评估、尽职调查式风险识别、跨境交易协调与科技产品投资判断。',
+            metrics: [
+                { val: '95%+', lbl: 'AI项目按期交付率', color: 'var(--green)' },
+                { val: '40%↑', lbl: '人效提升(ROI量化)', color: 'var(--green)' },
+                { val: '15%↓', lbl: '成本节约', color: 'var(--green)' },
+                { val: '92%+', lbl: '版本准时发布率', color: 'var(--green)' }
+            ],
+            jobs: [
+                {
+                    company: '美图集团', companyColor: '#f59e0b',
+                    title: '高级项目经理',
+                    period: '2025.07 – 2026.04',
+                    bullets: [
+                        '主导AI影像产品出海专项（美国&巴西），项目估值数千万级，按期交付率95%+',
+                        '类比投资尽调：对GDPR/LGPD合规、支付渠道、本地化运营进行系统排查，前置制定应对方案',
+                        '建立里程碑评审机制（立项→开发→测试→上线→复盘），延期风险降30%',
+                        '引入Claude Code AI辅助研发自动化，流程效率提升20%'
+                    ]
+                },
+                {
+                    company: '荔枝集团', companyColor: '#f59e0b',
+                    title: '高级项目经理',
+                    period: '2023.04 – 2025.06',
+                    bullets: [
+                        '主导研发效能提升专项，量化ROI：团队人效提升40%，交付周期缩短20%，节约成本15%',
+                        '建立Jira+飞书联动的数字化度量看板，实现项目进度实时监控与风险预警',
+                        'AI内容洞察平台：用户留存+20%，内容点击率+15%，类比产品指标监控与投资回报跟踪'
+                    ]
+                },
+                {
+                    company: 'IGG', companyColor: 'var(--strategy)',
+                    title: '资深项目经理 / Scrum Master',
+                    period: '2021.08 – 2022.11',
+                    bullets: [
+                        '敏捷交付标准化，项目准时率90%+，建立持续交付实践',
+                        '跨部门协调（技术/美术/运营/商务），项目管理全流程覆盖'
+                    ]
+                }
+            ],
+            skills: [
+                { label: 'PMP · ACP · NPDP', style: 'background:var(--accent-g);color:var(--accent);border-color:var(--accent-g2)' },
+                { label: 'ROI评估建模', style: 'background:rgba(245,158,11,0.12);color:#f59e0b;border-color:rgba(245,158,11,0.25)' },
+                { label: '尽职调查式风险识别', style: 'background:rgba(245,158,11,0.12);color:#f59e0b;border-color:rgba(245,158,11,0.25)' },
+                { label: '财务影响量化', style: 'background:rgba(245,158,11,0.12);color:#f59e0b;border-color:rgba(245,158,11,0.25)' },
+                { label: 'AI产品理解', style: 'background:var(--green-g);color:var(--green);border-color:rgba(52,211,153,0.25)' },
+                { label: '跨境交易协调', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: '竞品分析/行业研究', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' },
+                { label: '英语商务流利', style: 'background:var(--card-2);color:var(--text-2);border-color:var(--border)' }
+            ],
+            edu: { school: '中山大学', degree: '数字经济 硕士（在读）', detail: '2025.09 – 2028.09 · 项目管理方向' }
         }
     };
 
