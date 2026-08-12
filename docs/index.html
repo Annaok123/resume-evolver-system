@@ -202,7 +202,11 @@
         .tag-src { background: var(--card-2); color: var(--text-3); border: 1px solid var(--border); }
 
         /* Track divider */
-        .track-divider {
+        .tab-btn { padding:5px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text-2);font-size:0.72rem;cursor:pointer;transition:all 0.2s;white-space:nowrap; }
+        .tab-btn:hover { border-color:var(--accent);color:var(--accent); }
+        .tab-btn.active { background:var(--accent-g);color:var(--accent);border-color:var(--accent-g2);font-weight:600; }
+        .track-section { display:block; }
+        .track-section.hidden { display:none; }
             display: flex; align-items: center; gap: 8px;
             margin: 16px 0 8px; padding: 6px 0;
             border-bottom: 1px solid var(--border);
@@ -578,60 +582,74 @@
                     <button class="btn btn-sm" onclick="document.getElementById('dataSourcePanel').style.display=document.getElementById('dataSourcePanel').style.display==='block'?'none':'block'">🔗 数据源</button>
                 </div>
             </div>
-            <div class="card-body" style="max-height:780px;overflow-y:auto;padding-top:0;">
-                
+            <div class="card-body" style="max-height:780px;overflow-y:auto;padding-top:8px;">
+                <!-- Tab Switcher -->
+                <div style="display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;margin-bottom:2px;scrollbar-width:none;-ms-overflow-style:none;">
+                    <button class="tab-btn active" onclick="switchTrackTab('all',this)">全部 38</button>
+                    <button class="tab-btn" onclick="switchTrackTab('pm',this)">🎯 PM 8</button>
+                    <button class="tab-btn" onclick="switchTrackTab('product',this)">📱 产品 7</button>
+                    <button class="tab-btn" onclick="switchTrackTab('ba',this)">📊 BA 8</button>
+                    <button class="tab-btn" onclick="switchTrackTab('strategy',this)">🏛️ 战略 6</button>
+                    <button class="tab-btn" onclick="switchTrackTab('investment',this)">💹 投资 9</button>
+                </div>
                 <!-- PM Track -->
-                <div class="track-divider"><span class="track-divider-label" style="color:var(--pm)">🎯 项目经理 (8)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">20-40K</span></div>
-                <div class="job-row"><div class="job-name">高级项目经理</div><div class="job-sal">20-35K</div><div class="job-co">智能家居公司 · 深圳</div><div class="job-tgs"><span class="tg pm">PMP优先</span><span class="tg src">猎聘</span><span class="tg">5-8年</span></div></div>
-                <div class="job-row"><div class="job-name">Program Manager</div><div class="job-sal">30-35K·14薪</div><div class="job-co">消费类电子 · 深圳</div><div class="job-tgs"><span class="tg pm">研发PM</span><span class="tg src">BOSS</span><span class="tg">10年+</span></div></div>
-                <div class="job-row"><div class="job-name">AI软件项目交付PM</div><div class="job-sal">20-40K</div><div class="job-co">计算机软件 · 深圳/北京/西安</div><div class="job-tgs"><span class="tg pm">AI交付</span><span class="tg src">猎聘</span><span class="tg">GDPR</span></div></div>
-                <div class="job-row"><div class="job-name">安服项目经理Leader</div><div class="job-sal">30-40K</div><div class="job-co">网络安全公司 · 深圳</div><div class="job-tgs"><span class="tg pm">安全PM</span><span class="tg src">BOSS</span><span class="tg">D轮</span></div></div>
-                <div class="job-row"><div class="job-name">IPD研发负责人</div><div class="job-sal">25-40K</div><div class="job-co">锦凌电子 · 深圳宝安</div><div class="job-tgs"><span class="tg pm">IPD流程</span><span class="tg src">BOSS</span><span class="tg">连接器</span></div></div>
-                <div class="job-row"><div class="job-name">项目经理(智慧城市)</div><div class="job-sal">面议</div><div class="job-co">中科大脑 · 深圳</div><div class="job-tgs"><span class="tg pm">PMP</span><span class="tg src">BOSS</span><span class="tg">智慧城市</span></div></div>
-                <div class="job-row"><div class="job-name">高级项目经理</div><div class="job-sal">面议</div><div class="job-co">蘑菇财富 · 深圳</div><div class="job-tgs"><span class="tg pm">PMP</span><span class="tg src">猎聘</span><span class="tg">全生命周期</span></div></div>
-                <div class="job-row"><div class="job-name">高级工程项目经理</div><div class="job-sal">面议</div><div class="job-co">德维森实业 · 深圳</div><div class="job-tgs"><span class="tg pm">DCS/PLC</span><span class="tg src">官网</span><span class="tg">自动化</span></div></div>
-
+                <div class="track-section" data-track="pm">
+                    <div class="track-divider"><span class="track-divider-label" style="color:var(--pm)">🎯 项目经理 (8)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">20-40K</span></div>
+                    <div class="job-row"><div class="job-name">高级项目经理</div><div class="job-sal">20-35K</div><div class="job-co">智能家居公司 · 深圳</div><div class="job-tgs"><span class="tg pm">PMP优先</span><span class="tg src">猎聘</span><span class="tg">5-8年</span></div></div>
+                    <div class="job-row"><div class="job-name">Program Manager</div><div class="job-sal">30-35K·14薪</div><div class="job-co">消费类电子 · 深圳</div><div class="job-tgs"><span class="tg pm">研发PM</span><span class="tg src">BOSS</span><span class="tg">10年+</span></div></div>
+                    <div class="job-row"><div class="job-name">AI软件项目交付PM</div><div class="job-sal">20-40K</div><div class="job-co">计算机软件 · 深圳/北京/西安</div><div class="job-tgs"><span class="tg pm">AI交付</span><span class="tg src">猎聘</span><span class="tg">GDPR</span></div></div>
+                    <div class="job-row"><div class="job-name">安服项目经理Leader</div><div class="job-sal">30-40K</div><div class="job-co">网络安全公司 · 深圳</div><div class="job-tgs"><span class="tg pm">安全PM</span><span class="tg src">BOSS</span><span class="tg">D轮</span></div></div>
+                    <div class="job-row"><div class="job-name">IPD研发负责人</div><div class="job-sal">25-40K</div><div class="job-co">锦凌电子 · 深圳宝安</div><div class="job-tgs"><span class="tg pm">IPD流程</span><span class="tg src">BOSS</span><span class="tg">连接器</span></div></div>
+                    <div class="job-row"><div class="job-name">项目经理(智慧城市)</div><div class="job-sal">面议</div><div class="job-co">中科大脑 · 深圳</div><div class="job-tgs"><span class="tg pm">PMP</span><span class="tg src">BOSS</span><span class="tg">智慧城市</span></div></div>
+                    <div class="job-row"><div class="job-name">高级项目经理</div><div class="job-sal">面议</div><div class="job-co">蘑菇财富 · 深圳</div><div class="job-tgs"><span class="tg pm">PMP</span><span class="tg src">猎聘</span><span class="tg">全生命周期</span></div></div>
+                    <div class="job-row"><div class="job-name">高级工程项目经理</div><div class="job-sal">面议</div><div class="job-co">德维森实业 · 深圳</div><div class="job-tgs"><span class="tg pm">DCS/PLC</span><span class="tg src">官网</span><span class="tg">自动化</span></div></div>
+                </div>
                 <!-- Product Track -->
-                <div class="track-divider"><span class="track-divider-label" style="color:var(--product)">📱 产品经理 (7)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">18-65K</span></div>
-                <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">18-28K·14薪</div><div class="job-co">Xmind(爱思) · 深圳南山</div><div class="job-tgs"><span class="tg prod">AIGC</span><span class="tg src">BOSS</span><span class="tg">C端交互</span></div></div>
-                <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">18-25K</div><div class="job-co">海雀科技 · 深圳南山</div><div class="job-tgs"><span class="tg prod">LLM/RAG</span><span class="tg src">猎聘</span><span class="tg">Prompt</span></div></div>
-                <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">面议</div><div class="job-co">WPS金山 · 深圳</div><div class="job-tgs"><span class="tg prod">NLP/CV</span><span class="tg src">猎聘</span><span class="tg">商业化</span></div></div>
-                <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">30-50K·14薪</div><div class="job-co">智能推荐公司 · 深圳宝安</div><div class="job-tgs"><span class="tg prod">推荐算法</span><span class="tg src">猎聘</span><span class="tg">2B平台</span></div></div>
-                <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">25-40K</div><div class="job-co">人工智能公司 · 深圳福田</div><div class="job-tgs"><span class="tg prod">社区型产品</span><span class="tg src">猎聘</span><span class="tg">数据治理</span></div></div>
-                <div class="job-row"><div class="job-name">AI产品经理(大屏)</div><div class="job-sal">40-65万/年</div><div class="job-co">中长视频平台 · 深圳</div><div class="job-tgs"><span class="tg prod">ChatGPT</span><span class="tg src">智联</span><span class="tg">电视端</span></div></div>
-                <div class="job-row"><div class="job-name">AI产品策划</div><div class="job-sal">20-30K·14薪</div><div class="job-co">Xmind · 深圳南山</div><div class="job-tgs"><span class="tg prod">AI对话</span><span class="tg src">BOSS</span><span class="tg">情感陪伴</span></div></div>
-
+                <div class="track-section" data-track="product">
+                    <div class="track-divider"><span class="track-divider-label" style="color:var(--product)">📱 产品经理 (7)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">18-65K</span></div>
+                    <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">18-28K·14薪</div><div class="job-co">Xmind(爱思) · 深圳南山</div><div class="job-tgs"><span class="tg prod">AIGC</span><span class="tg src">BOSS</span><span class="tg">C端交互</span></div></div>
+                    <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">18-25K</div><div class="job-co">海雀科技 · 深圳南山</div><div class="job-tgs"><span class="tg prod">LLM/RAG</span><span class="tg src">猎聘</span><span class="tg">Prompt</span></div></div>
+                    <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">面议</div><div class="job-co">WPS金山 · 深圳</div><div class="job-tgs"><span class="tg prod">NLP/CV</span><span class="tg src">猎聘</span><span class="tg">商业化</span></div></div>
+                    <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">30-50K·14薪</div><div class="job-co">智能推荐公司 · 深圳宝安</div><div class="job-tgs"><span class="tg prod">推荐算法</span><span class="tg src">猎聘</span><span class="tg">2B平台</span></div></div>
+                    <div class="job-row"><div class="job-name">AI产品经理</div><div class="job-sal">25-40K</div><div class="job-co">人工智能公司 · 深圳福田</div><div class="job-tgs"><span class="tg prod">社区型产品</span><span class="tg src">猎聘</span><span class="tg">数据治理</span></div></div>
+                    <div class="job-row"><div class="job-name">AI产品经理(大屏)</div><div class="job-sal">40-65万/年</div><div class="job-co">中长视频平台 · 深圳</div><div class="job-tgs"><span class="tg prod">ChatGPT</span><span class="tg src">智联</span><span class="tg">电视端</span></div></div>
+                    <div class="job-row"><div class="job-name">AI产品策划</div><div class="job-sal">20-30K·14薪</div><div class="job-co">Xmind · 深圳南山</div><div class="job-tgs"><span class="tg prod">AI对话</span><span class="tg src">BOSS</span><span class="tg">情感陪伴</span></div></div>
+                </div>
                 <!-- BA Track -->
-                <div class="track-divider"><span class="track-divider-label" style="color:var(--ba)">📊 商业分析 (8)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">12-50K</span></div>
-                <div class="job-row"><div class="job-name">BA业务分析师(资深)</div><div class="job-sal">18-25K</div><div class="job-co">头部大厂 · 深圳南油</div><div class="job-tgs"><span class="tg ba">SQL/Tableau</span><span class="tg src">猎聘</span><span class="tg">六险一金</span></div></div>
-                <div class="job-row"><div class="job-name">BA需求分析师(OMS)</div><div class="job-sal">12-15K</div><div class="job-co">宝尊电商 · 深圳龙岗</div><div class="job-tgs"><span class="tg ba">OMS系统</span><span class="tg src">BOSS</span><span class="tg">3年+</span></div></div>
-                <div class="job-row"><div class="job-name">高级商业分析师</div><div class="job-sal">面议</div><div class="job-co">互联网头部 · 深圳</div><div class="job-tgs"><span class="tg ba">指标体系</span><span class="tg src">猎聘</span><span class="tg">算法模型</span></div></div>
-                <div class="job-row"><div class="job-name">商业分析资深专员</div><div class="job-sal">面议</div><div class="job-co">大型集团 · 深圳</div><div class="job-tgs"><span class="tg ba">Excel/PPT</span><span class="tg src">猎聘</span><span class="tg">咨询背景</span></div></div>
-                <div class="job-row"><div class="job-name">商业分析师</div><div class="job-sal">面议</div><div class="job-co">京东集团 · 深圳</div><div class="job-tgs"><span class="tg ba">Power BI</span><span class="tg src">BOSS</span><span class="tg">Python</span></div></div>
-                <div class="job-row"><div class="job-name">战略及商业分析师</div><div class="job-sal">25-50K·14薪</div><div class="job-co">顺丰同城 · 深圳南山</div><div class="job-tgs"><span class="tg ba">CFA优先</span><span class="tg src">猎聘</span><span class="tg">硕士+</span></div></div>
-                <div class="job-row"><div class="job-name">BA业务分析师(BA)</div><div class="job-sal">面议</div><div class="job-co">四方精创 · 深圳</div><div class="job-tgs"><span class="tg ba">银行业务</span><span class="tg src">BOSS</span><span class="tg">UML/英语</span></div></div>
-                <div class="job-row"><div class="job-name">HRIS方向业务分析师</div><div class="job-sal">17-24K·14薪</div><div class="job-co">海辰储能 · 深圳龙华</div><div class="job-tgs"><span class="tg ba">HRIS系统</span><span class="tg src">猎聘</span><span class="tg">8年+</span></div></div>
-
+                <div class="track-section" data-track="ba">
+                    <div class="track-divider"><span class="track-divider-label" style="color:var(--ba)">📊 商业分析 (8)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">12-50K</span></div>
+                    <div class="job-row"><div class="job-name">BA业务分析师(资深)</div><div class="job-sal">18-25K</div><div class="job-co">头部大厂 · 深圳南油</div><div class="job-tgs"><span class="tg ba">SQL/Tableau</span><span class="tg src">猎聘</span><span class="tg">六险一金</span></div></div>
+                    <div class="job-row"><div class="job-name">BA需求分析师(OMS)</div><div class="job-sal">12-15K</div><div class="job-co">宝尊电商 · 深圳龙岗</div><div class="job-tgs"><span class="tg ba">OMS系统</span><span class="tg src">BOSS</span><span class="tg">3年+</span></div></div>
+                    <div class="job-row"><div class="job-name">高级商业分析师</div><div class="job-sal">面议</div><div class="job-co">互联网头部 · 深圳</div><div class="job-tgs"><span class="tg ba">指标体系</span><span class="tg src">猎聘</span><span class="tg">算法模型</span></div></div>
+                    <div class="job-row"><div class="job-name">商业分析资深专员</div><div class="job-sal">面议</div><div class="job-co">大型集团 · 深圳</div><div class="job-tgs"><span class="tg ba">Excel/PPT</span><span class="tg src">猎聘</span><span class="tg">咨询背景</span></div></div>
+                    <div class="job-row"><div class="job-name">商业分析师</div><div class="job-sal">面议</div><div class="job-co">京东集团 · 深圳</div><div class="job-tgs"><span class="tg ba">Power BI</span><span class="tg src">BOSS</span><span class="tg">Python</span></div></div>
+                    <div class="job-row"><div class="job-name">战略及商业分析师</div><div class="job-sal">25-50K·14薪</div><div class="job-co">顺丰同城 · 深圳南山</div><div class="job-tgs"><span class="tg ba">CFA优先</span><span class="tg src">猎聘</span><span class="tg">硕士+</span></div></div>
+                    <div class="job-row"><div class="job-name">BA业务分析师(BA)</div><div class="job-sal">面议</div><div class="job-co">四方精创 · 深圳</div><div class="job-tgs"><span class="tg ba">银行业务</span><span class="tg src">BOSS</span><span class="tg">UML/英语</span></div></div>
+                    <div class="job-row"><div class="job-name">HRIS方向业务分析师</div><div class="job-sal">17-24K·14薪</div><div class="job-co">海辰储能 · 深圳龙华</div><div class="job-tgs"><span class="tg ba">HRIS系统</span><span class="tg src">猎聘</span><span class="tg">8年+</span></div></div>
+                </div>
                 <!-- Strategy Track -->
-                <div class="track-divider"><span class="track-divider-label" style="color:var(--strategy)">🏛️ 战略规划 (6)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">面议-110K</span></div>
-                <div class="job-row"><div class="job-name">战略管理总监</div><div class="job-sal">面议</div><div class="job-co">出海消费类公司 · 深圳</div><div class="job-tgs"><span class="tg strat">出海战略</span><span class="tg src">猎聘</span><span class="tg">5年+咨询</span></div></div>
-                <div class="job-row"><div class="job-name">战略规划经理</div><div class="job-sal">面议</div><div class="job-co">大型集团 · 深圳</div><div class="job-tgs"><span class="tg strat">战略解码</span><span class="tg src">猎聘</span><span class="tg">专题研究</span></div></div>
-                <div class="job-row"><div class="job-name">战略规划总监</div><div class="job-sal">面议</div><div class="job-co">国际咨询公司 · 厦门/深圳</div><div class="job-tgs"><span class="tg strat">10年+咨询</span><span class="tg src">猎聘</span><span class="tg">数字化创新</span></div></div>
-                <div class="job-row"><div class="job-name">芯片产品规划总监</div><div class="job-sal">80-110K·15薪</div><div class="job-co">云天励飞 · 深圳</div><div class="job-tgs"><span class="tg strat">技术战略</span><span class="tg src">BOSS</span><span class="tg">大模型</span></div></div>
-                <div class="job-row"><div class="job-name">首席运营官/战略总监</div><div class="job-sal">30-60K</div><div class="job-co">匀丰资产(基金) · 北京/深圳</div><div class="job-tgs"><span class="tg strat">发展战略</span><span class="tg src">BOSS</span><span class="tg">绩效考核</span></div></div>
-                <div class="job-row"><div class="job-name">产业规划总监</div><div class="job-sal">5-10K</div><div class="job-co">文旅公司 · 南昌</div><div class="job-tgs"><span class="tg strat">SWOT/PEST</span><span class="tg src">BOSS</span><span class="tg">文旅规划</span></div></div>
-
-                <!-- Investment Track (NEW) -->
-                <div class="track-divider"><span class="track-divider-label" style="color:#f59e0b;">💹 投资经理 (9)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">面议-40K</span></div>
-                <div class="job-row"><div class="job-name">FOF投资经理</div><div class="job-sal">18-25K</div><div class="job-co">国信证券资管 · 深圳福田</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">基金从业</span><span class="tg src">智联</span><span class="tg">硕士</span></div></div>
-                <div class="job-row"><div class="job-name">证券投资项目经理</div><div class="job-sal">20-40K·14薪</div><div class="job-co">某证券公司 · 深圳福田</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">固收/衍生品</span><span class="tg src">智联</span><span class="tg">3-5年</span></div></div>
-                <div class="job-row"><div class="job-name">投资经理（投资分析）</div><div class="job-sal">面议</div><div class="job-co">某创投公司 · 深圳</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">尽调/建模</span><span class="tg src">猎聘</span><span class="tg">法律/财会</span></div></div>
-                <div class="job-row"><div class="job-name">高级投资经理（前沿科技）</div><div class="job-sal">面议</div><div class="job-co">超越创投 · 深圳南山</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">VC/AI/硬科技</span><span class="tg src">猎聘</span><span class="tg">硕士·CFA</span></div></div>
-                <div class="job-row"><div class="job-name">投资经理（PE方向）</div><div class="job-sal">面议</div><div class="job-co">华强集团 · 深圳</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">PE投资</span><span class="tg src">今日招聘</span><span class="tg">CPA优先</span></div></div>
-                <div class="job-row"><div class="job-name">高级PE投资经理</div><div class="job-sal">面议</div><div class="job-co">君盛投资 · 深圳</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">3年+VC</span><span class="tg src">今日招聘</span><span class="tg">主导2个案例</span></div></div>
-                <div class="job-row"><div class="job-name">投资总监</div><div class="job-sal">15-30K</div><div class="job-co">前海信达私募 · 深圳南油</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">一级市场</span><span class="tg src">BOSS</span><span class="tg">硬科技</span></div></div>
-                <div class="job-row"><div class="job-name">投资总监</div><div class="job-sal">22-40K</div><div class="job-co">某私募基金 · 深圳南山</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">5-10年</span><span class="tg src">BOSS</span><span class="tg">一级市场</span></div></div>
-                <div class="job-row"><div class="job-name">私募股权基金经理</div><div class="job-sal">15-20K</div><div class="job-co">卓诚源邦 · 深圳</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">硬科技VC</span><span class="tg src">BOSS</span><span class="tg">高净值</span></div></div>
+                <div class="track-section" data-track="strategy">
+                    <div class="track-divider"><span class="track-divider-label" style="color:var(--strategy)">🏛️ 战略规划 (6)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">面议-110K</span></div>
+                    <div class="job-row"><div class="job-name">战略管理总监</div><div class="job-sal">面议</div><div class="job-co">出海消费类公司 · 深圳</div><div class="job-tgs"><span class="tg strat">出海战略</span><span class="tg src">猎聘</span><span class="tg">5年+咨询</span></div></div>
+                    <div class="job-row"><div class="job-name">战略规划经理</div><div class="job-sal">面议</div><div class="job-co">大型集团 · 深圳</div><div class="job-tgs"><span class="tg strat">战略解码</span><span class="tg src">猎聘</span><span class="tg">专题研究</span></div></div>
+                    <div class="job-row"><div class="job-name">战略规划总监</div><div class="job-sal">面议</div><div class="job-co">国际咨询公司 · 厦门/深圳</div><div class="job-tgs"><span class="tg strat">10年+咨询</span><span class="tg src">猎聘</span><span class="tg">数字化创新</span></div></div>
+                    <div class="job-row"><div class="job-name">芯片产品规划总监</div><div class="job-sal">80-110K·15薪</div><div class="job-co">云天励飞 · 深圳</div><div class="job-tgs"><span class="tg strat">技术战略</span><span class="tg src">BOSS</span><span class="tg">大模型</span></div></div>
+                    <div class="job-row"><div class="job-name">首席运营官/战略总监</div><div class="job-sal">30-60K</div><div class="job-co">匀丰资产(基金) · 北京/深圳</div><div class="job-tgs"><span class="tg strat">发展战略</span><span class="tg src">BOSS</span><span class="tg">绩效考核</span></div></div>
+                    <div class="job-row"><div class="job-name">产业规划总监</div><div class="job-sal">5-10K</div><div class="job-co">文旅公司 · 南昌</div><div class="job-tgs"><span class="tg strat">SWOT/PEST</span><span class="tg src">BOSS</span><span class="tg">文旅规划</span></div></div>
+                </div>
+                <!-- Investment Track -->
+                <div class="track-section" data-track="investment">
+                    <div class="track-divider"><span class="track-divider-label" style="color:#f59e0b;">💹 投资经理 (9)</span><span style="margin-left:auto;font-size:0.65rem;color:var(--text-3);">面议-40K</span></div>
+                    <div class="job-row"><div class="job-name">FOF投资经理</div><div class="job-sal">18-25K</div><div class="job-co">国信证券资管 · 深圳福田</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">基金从业</span><span class="tg src">智联</span><span class="tg">硕士</span></div></div>
+                    <div class="job-row"><div class="job-name">证券投资项目经理</div><div class="job-sal">20-40K·14薪</div><div class="job-co">某证券公司 · 深圳福田</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">固收/衍生品</span><span class="tg src">智联</span><span class="tg">3-5年</span></div></div>
+                    <div class="job-row"><div class="job-name">投资经理（投资分析）</div><div class="job-sal">面议</div><div class="job-co">某创投公司 · 深圳</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">尽调/建模</span><span class="tg src">猎聘</span><span class="tg">法律/财会</span></div></div>
+                    <div class="job-row"><div class="job-name">高级投资经理（前沿科技）</div><div class="job-sal">面议</div><div class="job-co">超越创投 · 深圳南山</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">VC/AI/硬科技</span><span class="tg src">猎聘</span><span class="tg">硕士·CFA</span></div></div>
+                    <div class="job-row"><div class="job-name">投资经理（PE方向）</div><div class="job-sal">面议</div><div class="job-co">华强集团 · 深圳</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">PE投资</span><span class="tg src">今日招聘</span><span class="tg">CPA优先</span></div></div>
+                    <div class="job-row"><div class="job-name">高级PE投资经理</div><div class="job-sal">面议</div><div class="job-co">君盛投资 · 深圳</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">3年+VC</span><span class="tg src">今日招聘</span><span class="tg">主导2个案例</span></div></div>
+                    <div class="job-row"><div class="job-name">投资总监</div><div class="job-sal">15-30K</div><div class="job-co">前海信达私募 · 深圳南油</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">一级市场</span><span class="tg src">BOSS</span><span class="tg">硬科技</span></div></div>
+                    <div class="job-row"><div class="job-name">投资总监</div><div class="job-sal">22-40K</div><div class="job-co">某私募基金 · 深圳南山</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">5-10年</span><span class="tg src">BOSS</span><span class="tg">一级市场</span></div></div>
+                    <div class="job-row"><div class="job-name">私募股权基金经理</div><div class="job-sal">15-20K</div><div class="job-co">卓诚源邦 · 深圳</div><div class="job-tgs"><span class="tg" style="background:rgba(245,158,11,0.10);color:#f59e0b;border-color:rgba(245,158,11,0.2);">硬科技VC</span><span class="tg src">BOSS</span><span class="tg">高净值</span></div></div>
+                </div>
 
                 <!-- Data Source Panel (collapsible) -->
                 <div id="dataSourcePanel" style="display:none;margin-top:16px;padding:16px;background:var(--surface);border-radius:12px;border:1px solid var(--border-2);">
@@ -1065,6 +1083,15 @@
 
     // Actions
     function showSuggestions() { jumpTo('suggestionsSection'); }
+    function switchTrackTab(track, btn) {
+        // Update buttons
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        // Show/hide sections
+        document.querySelectorAll('.track-section').forEach(s => {
+            s.classList.toggle('hidden', track !== 'all' && s.dataset.track !== track);
+        });
+    }
     function jumpTo(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }
 
     function runPipeline() {
